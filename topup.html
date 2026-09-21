@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Top Up List</title>
+  <link rel="icon" href="../image/default-avatar.jpg">
+  <link rel="stylesheet" href="topup.css">
+  <link rel="stylesheet" href="bottom.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="neon-bg"></div>
+
+<div class="header">
+
+    <div class="logo-title">
+        🔥 Top Up List
+    </div>
+
+    <div class="header-right">
+
+        <div class="wallet-pill"
+             onclick="location.href='wallet-topup.html'">
+
+            💰
+            <span id="walletBalance">
+                Rs. 0.00
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="topup-content">
+
+    <div id="productsContainer"></div>
+
+</div>
+
+<div id="bottomNav"></div>
+
+<script src="bottom.js"></script>
+<script type="module" src="topup.js"></script>
+
+</body>
+</html>

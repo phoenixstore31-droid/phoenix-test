@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,
+      initial-scale=1.0,
+      maximum-scale=1.0,
+      user-scalable=no">
+
+<title>Phoenix Reseller Application</title>
+
+<link rel="icon" href="../image/default-avatar.jpg">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="reseller-apply.css">
+<link rel="stylesheet" href="bottom.css">
+
+</head>
+
+<body>
+
+
+<!-- =========================================
+BACKGROUND EFFECTS
+========================================= -->
+
+<div class="bg-glow glow-red"></div>
+<div class="bg-glow glow-blue"></div>
+
+
+<!-- =========================================
+PAGE
+========================================= -->
+
+<main class="reseller-page">
+
+    <div class="reseller-container">
+
+
+        <!-- =================================
+        TOP BAR
+        ================================= -->
+
+        <div class="top-bar">
+
+            <a href="profile.html"
+               class="back-btn">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                <span>Profile</span>
+
+            </a>
+
+            <div class="secure-badge">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                Secure Application
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+        HERO
+        ================================= -->
+
+        <section class="hero">
+
+            <div class="hero-icon">
+
+                <i class="fa-solid fa-gamepad"></i>
+
+            </div>
+
+
+            <div class="hero-content">
+
+                <div class="hero-tag">
+
+                    <span></span>
+
+                    PHOENIX PARTNER PROGRAM
+
+                </div>
+
+
+                <h1>
+                    Become a
+                    <span>Phoenix Reseller</span>
+                </h1>
+
+
+                <p>
+
+                    Grow your gaming top-up business with
+                    exclusive reseller pricing, rewards and
+                    dedicated support.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+        BENEFITS
+        ================================= -->
+
+        <section class="benefits">
+
+            <div class="benefit-card">
+
+                <div class="benefit-icon red">
+                    <i class="fa-solid fa-percent"></i>
+                </div>
+
+                <div>
+                    <strong>Exclusive Discount</strong>
+                    <small>Better reseller pricing</small>
+                </div>
+
+            </div>
+
+
+            <div class="benefit-card">
+
+                <div class="benefit-icon orange">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+                <div>
+                    <strong>Phoenix Rewards</strong>
+                    <small>Earn reward benefits</small>
+                </div>
+
+            </div>
+
+
+            <div class="benefit-card">
+
+                <div class="benefit-icon green">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <div>
+                    <strong>Priority Support</strong>
+                    <small>Dedicated assistance</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+        APPLICATION CARD
+        ================================= -->
+
+        <section class="application-card">
+
+
+            <!-- HEADER -->
+
+            <div class="section-header">
+
+                <div class="section-number">
+                    01
+                </div>
+
+                <div>
+
+                    <h2>
+                        Applicant Information
+                    </h2>
+
+                    <p>
+                        Your account information
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACCOUNT -->
+
+            <div class="form-grid">
+
+
+                <div class="input-group">
+
+                    <label>
+                        Username
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="username"
+                            disabled
+                            placeholder="Loading...">
+
+                        <span class="verified">
+                            <i class="fa-solid fa-check"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Email
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="email"
+                            disabled
+                            placeholder="Loading...">
+
+                        <span class="verified">
+                            <i class="fa-solid fa-check"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        WhatsApp Number
+                        <span>*</span>
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                        <input
+                            type="tel"
+                            id="whatsapp"
+                            placeholder="e.g. 0771234567"
+                            autocomplete="tel">
+
+                    </div>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Age
+                        <span>*</span>
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-calendar"></i>
+
+                        <input
+                            type="number"
+                            id="age"
+                            min="18"
+                            max="100"
+                            placeholder="18+">
+
+                    </div>
+
+                </div>
+
+
+                <div class="input-group full">
+
+                    <label>
+                        Country
+                        <span>*</span>
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-earth-americas"></i>
+
+                        <select id="country">
+
+                            <option value="Sri Lanka">
+                                Sri Lanka
+                            </option>
+
+                            <option value="India">
+                                India
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+            BUSINESS SECTION
+            ================================= -->
+
+            <div class="section-header business-header">
+
+                <div class="section-number">
+                    02
+                </div>
+
+                <div>
+
+                    <h2>
+                        Business Information
+                    </h2>
+
+                    <p>
+                        Tell us about your business
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+                <div class="input-group">
+
+                    <label>
+                        Business Name
+                        <span>*</span>
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-store"></i>
+
+                        <input
+                            type="text"
+                            id="businessName"
+                            placeholder="Your business name">
+
+                    </div>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Monthly Profit
+                        <span>*</span>
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        <input
+                            type="number"
+                            id="monthlyProfit"
+                            min="0"
+                            placeholder="Estimated monthly profit">
+
+                    </div>
+
+                </div>
+
+
+                <div class="input-group full">
+
+                    <label>
+                        Business Address
+                        <span>*</span>
+                    </label>
+
+                    <div class="input-wrapper textarea-wrapper">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <textarea
+                            id="address"
+                            placeholder="Enter your business address"></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <div class="input-group full">
+
+                    <label>
+                        Website / App
+                        <small>Optional</small>
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-globe"></i>
+
+                        <input
+                            type="text"
+                            id="websiteOrApp"
+                            placeholder="Website, Facebook page, WhatsApp business or app">
+
+                    </div>
+
+                </div>
+
+
+                <div class="input-group full">
+
+                    <label>
+                        Business Details
+                        <span>*</span>
+                    </label>
+
+                    <div class="input-wrapper textarea-wrapper">
+
+                        <i class="fa-solid fa-pen"></i>
+
+                        <textarea
+                            id="businessDetails"
+                            placeholder="Tell us how you sell game top-ups and how you plan to use the Phoenix reseller program"></textarea>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+            PLAN SECTION
+            ================================= -->
+
+            <div class="section-header plan-header">
+
+                <div class="section-number">
+                    03
+                </div>
+
+                <div>
+
+                    <h2>
+                        Choose Your Plan
+                    </h2>
+
+                    <p>
+                        Select the reseller plan that fits your business
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="plans">
+
+
+                <!-- JS WILL LOAD PLANS HERE -->
+
+
+            </div>
+
+
+            <!-- =================================
+            MESSAGE
+            ================================= -->
+
+            <div id="message"></div>
+
+
+            <!-- =================================
+            SUBMIT
+            ================================= -->
+
+            <button
+                type="button"
+                id="submitBtn"
+                class="submit-btn">
+
+                <span>
+                    <i class="fa-solid fa-paper-plane"></i>
+                </span>
+
+                Submit Reseller Application
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+
+            <!-- =================================
+            NOTICE
+            ================================= -->
+
+            <div class="application-notice">
+
+                <div class="notice-icon">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Your information is secure
+                    </strong>
+
+                    <p>
+                        Your application will be reviewed by
+                        the Phoenix Store team before your
+                        reseller account is activated.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================
+        FOOTER
+        ================================= -->
+
+        <div class="page-footer">
+
+            <i class="fa-solid fa-bolt"></i>
+
+            POWERED BY PHOENIX STORE
+
+        </div>
+
+
+    </div>
+
+</main>
+
+<div id="bottomNav"></div>
+
+<script src="bottom.js"></script>
+<script type="module" src="reseller-apply.js"> </script>
+
+</body>
+
+</html>

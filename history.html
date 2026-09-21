@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="history.css">
+
+
+<title>History</title>
+
+</head>
+
+<body>
+
+<div class="header">
+
+  <span>🕒 History</span>
+
+  <div class="wallet-pill" onclick="location.href='wallet-topup.html'">
+
+    💰 Rs.
+    <span id="liveBalance">0.00</span>
+
+  </div>
+
+</div>
+
+
+<div class="history-wrapper">
+
+  <div class="tabs">
+    <button class="tab-btn active" id="topupTab">
+      TOP UP HISTORY
+    </button>
+
+    <button class="tab-btn" id="walletTab">
+      WALLET HISTORY
+    </button>
+  </div>
+
+  <div class="history-content">
+
+    <div class="history-page active" id="topupHistory">
+      Loading...
+    </div>
+
+    <div class="history-page" id="walletHistory">
+      Loading...
+    </div>
+
+  </div>
+
+</div>
+
+<div id="bottomNav"></div>
+
+<script src="bottom.js"></script>
+<script type="module" src="history.js"> </script>
+</body>
+</html>

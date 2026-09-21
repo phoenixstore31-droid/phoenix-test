@@ -1,0 +1,785 @@
+/* =========================================
+   PHOENIX PAYMENT
+   PREMIUM RED + BLACK GAMING THEME
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+    font-family:'Poppins','Segoe UI',sans-serif;
+
+    user-select:none;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body{
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(255,20,35,.13),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            rgba(180,0,20,.10),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            180deg,
+            #090909,
+            #030303
+        );
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    min-height:100vh;
+
+    padding:20px;
+
+    padding-bottom:95px;
+
+    overflow-x:hidden;
+}
+
+
+.container{
+
+    width:100%;
+
+    max-width:430px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header{
+
+    text-align:center;
+
+    margin:20px 0 35px;
+}
+
+
+/* Phoenix icon */
+
+.support-icon{
+
+    width:90px;
+    height:90px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:42px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff1e2d,
+            #8b000c
+        );
+
+    border:
+        1px solid rgba(255,60,70,.7);
+
+    box-shadow:
+
+        0 0 15px rgba(255,20,35,.55),
+
+        0 0 40px rgba(255,0,25,.25),
+
+        inset 0 0 18px rgba(255,255,255,.08);
+
+    animation:pulse 2.5s infinite;
+}
+
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+
+        box-shadow:
+            0 0 15px rgba(255,20,35,.45),
+            0 0 30px rgba(255,0,25,.15);
+    }
+
+    50%{
+        transform:scale(1.06);
+
+        box-shadow:
+            0 0 22px rgba(255,20,35,.7),
+            0 0 50px rgba(255,0,25,.3);
+    }
+
+    100%{
+        transform:scale(1);
+
+        box-shadow:
+            0 0 15px rgba(255,20,35,.45),
+            0 0 30px rgba(255,0,25,.15);
+    }
+}
+
+
+/* =========================================
+   HEADER TEXT
+========================================= */
+
+.header h1{
+
+    margin-top:18px;
+
+    font-size:28px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    color:#fff;
+
+    text-shadow:
+        0 0 10px rgba(255,30,45,.35);
+}
+
+
+.header p{
+
+    margin-top:12px;
+
+    font-size:15px;
+
+    line-height:24px;
+
+    color:#a8a8a8;
+}
+
+
+/* =========================================
+   CONTACT / PAYMENT CARDS
+========================================= */
+
+/* =========================================
+   CONTACT CARDS — EQUAL SPACING
+========================================= */
+
+.container{
+    width:100%;
+    max-width:430px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:24px;
+}
+
+.support-card{
+
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px;
+
+    margin:0;   /* important */
+
+    width:100%;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,20,22,.98),
+            rgba(8,8,9,.98)
+        );
+
+    border:
+        1px solid rgba(255,30,45,.28);
+
+    backdrop-filter:blur(15px);
+
+    transition:.3s;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.6),
+        inset 0 0 20px rgba(255,0,30,.025);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+/* =========================================
+   TOP GLOW LINE
+========================================= */
+
+.support-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:12%;
+
+    width:76%;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #ff1e2d,
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px #ff1e2d;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.support-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:
+        rgba(255,30,45,.7);
+
+    box-shadow:
+
+        0 12px 35px rgba(0,0,0,.7),
+
+        0 0 20px rgba(255,0,30,.13);
+}
+
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+
+/* =========================================
+   DEFAULT ICON
+========================================= */
+
+.icon{
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:15px;
+
+    font-size:28px;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff2638,
+            #97000f
+        );
+
+    border:
+        1px solid rgba(255,60,70,.45);
+
+    box-shadow:
+        0 0 15px rgba(255,20,35,.25);
+
+    flex-shrink:0;
+
+    transition:
+        .25s ease;
+}
+
+
+/* =========================================
+   WHATSAPP — REAL GREEN
+========================================= */
+
+.whatsapp .icon{
+
+    color:#25D366;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37,211,102,.20),
+            rgba(18,140,126,.08)
+        );
+
+    border:
+        1px solid rgba(37,211,102,.45);
+
+    box-shadow:
+        0 0 15px rgba(37,211,102,.25),
+        inset 0 0 12px rgba(37,211,102,.06);
+}
+
+
+/* =========================================
+   GMAIL — REAL RED
+========================================= */
+
+.gmail .icon{
+
+    color:#EA4335;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(234,67,53,.20),
+            rgba(183,28,28,.08)
+        );
+
+    border:
+        1px solid rgba(234,67,53,.45);
+
+    box-shadow:
+        0 0 15px rgba(234,67,53,.25),
+        inset 0 0 12px rgba(234,67,53,.06);
+}
+
+
+/* =========================================
+   DISCORD — REAL BLUE / PURPLE
+========================================= */
+
+.discord .icon{
+
+    color:#5865F2;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(88,101,242,.22),
+            rgba(64,78,189,.08)
+        );
+
+    border:
+        1px solid rgba(88,101,242,.48);
+
+    box-shadow:
+        0 0 15px rgba(88,101,242,.27),
+        inset 0 0 12px rgba(88,101,242,.06);
+}
+
+
+/* =========================================
+   ICON HOVER GLOW
+========================================= */
+
+.whatsapp:hover .icon{
+
+    box-shadow:
+        0 0 22px rgba(37,211,102,.40);
+}
+
+
+.gmail:hover .icon{
+
+    box-shadow:
+        0 0 22px rgba(234,67,53,.40);
+}
+
+
+.discord:hover .icon{
+
+    box-shadow:
+        0 0 22px rgba(88,101,242,.42);
+}
+
+
+/* =========================================
+   CARD TEXT
+========================================= */
+
+.left h3{
+
+    font-size:18px;
+
+    margin-bottom:4px;
+
+    color:#fff;
+
+    letter-spacing:.3px;
+}
+
+
+.left span{
+
+    font-size:13px;
+
+    color:#9a9a9a;
+}
+
+
+/* =========================================
+   ACTION BUTTON
+========================================= */
+
+.support-btn{
+
+    padding:12px 18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff2638,
+            #b00014
+        );
+
+    border:
+        1px solid rgba(255,80,90,.45);
+
+    box-shadow:
+
+        0 0 12px rgba(255,20,35,.25),
+
+        inset 0 0 8px rgba(255,255,255,.05);
+
+    transition:.3s;
+}
+
+
+.support-btn:hover{
+
+    transform:scale(1.06);
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3949,
+            #c50018
+        );
+
+    box-shadow:
+
+        0 0 20px rgba(255,20,35,.5);
+}
+
+
+.support-btn:active{
+
+    transform:scale(.95);
+}
+
+
+/* =========================================
+   CARD RED ACCENTS
+========================================= */
+
+.whatsapp{
+
+    border-left:
+        4px solid #ff1e2d;
+}
+
+
+.gmail{
+
+    border-left:
+        4px solid #ff1e2d;
+}
+
+
+.discord{
+
+    border-left:
+        4px solid #ff1e2d;
+}
+
+
+/* =========================================
+   BOTTOM NAV
+========================================= */
+
+.bottom-nav{
+
+    position:fixed;
+
+    bottom:0;
+
+    left:0;
+
+    width:100%;
+
+    height:70px;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #07101a,
+            #020617
+        );
+
+    backdrop-filter:blur(15px);
+
+    border-top:
+        1px solid rgba(56,189,248,.35);
+
+    box-shadow:
+        0 -5px 25px rgba(0,0,0,.7),
+
+        0 -1px 10px rgba(56,189,248,.08);
+
+    z-index:1000;
+}
+
+
+.nav-item{
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:#94a3b8;
+
+    font-size:12px;
+
+    transition:.25s;
+}
+
+
+.nav-item i{
+
+    display:block;
+
+    font-size:22px;
+
+    margin-bottom:4px;
+
+    transition:.25s;
+}
+
+
+.nav-item:hover,
+.nav-item.active{
+
+    color:#38bdf8;
+
+    text-shadow:
+        0 0 10px rgba(56,189,248,.45);
+}
+
+
+.nav-item.active i{
+
+    filter:
+        drop-shadow(
+            0 0 7px rgba(56,189,248,.55)
+        );
+}
+
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media(max-width:1024px){
+
+    .container{
+
+        max-width:500px;
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media(max-width:768px){
+
+    .header h1{
+
+        font-size:24px;
+    }
+
+    .header p{
+
+        font-size:14px;
+    }
+
+    .support-card{
+
+        padding:16px;
+
+        margin-bottom:22px;
+    }
+
+    .support-btn{
+
+        padding:10px 16px;
+
+        font-size:12px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:480px){
+
+    body{
+
+        padding:15px;
+
+        padding-bottom:90px;
+    }
+
+    .container{
+
+        max-width:100%;
+    }
+
+    .support-icon{
+
+        width:75px;
+
+        height:75px;
+
+        font-size:35px;
+    }
+
+    .header h1{
+
+        font-size:22px;
+    }
+
+    .header p{
+
+        font-size:13px;
+
+        line-height:20px;
+    }
+
+    .support-card{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+
+        margin-bottom:20px;
+    }
+
+    .left{
+
+        width:100%;
+    }
+
+    .support-btn{
+
+        width:100%;
+
+        height:45px;
+
+        font-size:14px;
+    }
+
+    .icon{
+
+        width:55px;
+
+        height:55px;
+
+        font-size:24px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media(max-width:360px){
+
+    .header h1{
+
+        font-size:20px;
+    }
+
+    .support-btn{
+
+        font-size:13px;
+    }
+
+    .left h3{
+
+        font-size:16px;
+    }
+
+    .left span{
+
+        font-size:12px;
+    }
+}

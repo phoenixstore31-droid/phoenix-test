@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Payment</title>
+  <link rel="stylesheet" href="payment.css">
+  <link rel="stylesheet" href="bottom.css">
+  <link rel="icon" href="../image/default-avatar.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="payment-header">
+
+<div class="logo">
+💎
+</div>
+
+<h2>PHOENIX PAYMENT</h2>
+
+<p>Choose your payment method</p>
+
+</div>
+
+<!-- HNB -->
+
+<div class="payment-card hnb">
+
+<div class="card-header">
+
+<div class="bank">
+🏦 HNB BANK
+</div>
+
+<button class="copy-btn" onclick="copyPayment(this)">
+<i class="fas fa-copy"></i>
+</button>
+
+</div>
+
+<div class="copy-content">
+
+<div class="row">
+<span>Account No</span>
+<b>134020110640</b>
+</div>
+
+<div class="row">
+<span>Name</span>
+<b>JOYTHAS K</b>
+</div>
+
+<div class="row">
+<span>Branch</span>
+<b>THIRUKKOVIL</b>
+</div>
+
+</div>
+
+</div>
+
+<!-- BOC -->
+
+<div class="payment-card boc">
+
+<div class="card-header">
+
+<div class="bank">
+🏦 BOC BANK
+</div>
+
+<button class="copy-btn" onclick="copyPayment(this)">
+<i class="fas fa-copy"></i>
+</button>
+
+</div>
+
+<div class="copy-content">
+
+<div class="row">
+<span>Account No</span>
+<b>96644532</b>
+</div>
+
+<div class="row">
+<span>Name</span>
+<b>JOYTHAS K</b>
+</div>
+
+<div class="row">
+<span>Branch</span>
+<b>THIRUKKOVIL</b>
+</div>
+
+</div>
+
+</div>
+
+<!-- eZ Cash -->
+
+<div class="payment-card ezcash">
+
+<div class="card-header">
+
+<div class="bank">
+📱 eZ Cash
+</div>
+
+<button class="copy-btn" onclick="copyPayment(this)">
+<i class="fas fa-copy"></i>
+</button>
+
+</div>
+
+<div class="copy-content">
+
+<div class="row">
+<span>Number</span>
+<b>0771945590</b>
+</div>
+
+<div class="row">
+<span>Name</span>
+<b>JOYTHAS K</b>
+</div>
+
+</div>
+
+<div class="note">
+
+⚠️ eZ Cash payment pannum pothu
+<b>Rs.20 extra</b> service charge pay pannunga.
+
+</div>
+
+</div>
+
+</div>
+
+<div id="bottomNav"></div>
+
+<script src="bottom.js"></script>
+<script type="module" src="payment.js"></script>
+
+</body>
+</html>

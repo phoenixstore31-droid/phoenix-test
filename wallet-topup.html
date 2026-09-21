@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Wallet Top Up</title>
+
+<link rel="icon" href="../image/default-avatar.jpg">
+<link rel="stylesheet" href="wallet-topup.css">
+<link rel="stylesheet" href="bottom.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<div class="wallet-tabs">
+
+    <button
+        type="button"
+        id="walletTab"
+        class="wallet-tab active"
+    >
+        💰 Wallet Top Up
+    </button>
+
+    <button
+        type="button"
+        id="redeemTab"
+        class="wallet-tab"
+    >
+        🎁 Redeem Code
+    </button>
+
+</div>
+
+<div id="walletTopupSection">
+
+<input
+type="number"
+id="amount"
+placeholder="Enter Amount (Rs.)">
+
+<input
+type="tel"
+id="whatsapp"
+placeholder="WhatsApp Number">
+
+<div class="upload-box">
+
+<h3>Upload Payment Receipt</h3>
+
+<label for="receipt" class="upload-btn">
+Choose Receipt
+</label>
+
+<input
+type="file"
+id="receipt"
+accept="image/*"
+hidden>
+
+<p id="fileText"></p>
+
+<img
+id="previewImage"
+style="display:none;width:100%;margin-top:10px;border-radius:10px;">
+
+</div>
+
+<button id="submitBtn">
+Submit Wallet Top Up
+</button>
+
+<p id="msg"></p>
+
+</div>
+
+<!-- =========================================
+     REDEEM CODE
+========================================= -->
+
+<div
+    id="redeemSection"
+    class="redeem-box"
+    style="display:none;"
+>
+
+    <h3>🎁 Redeem Code</h3>
+
+    <p>
+        Enter your redeem code to add money to your wallet.
+    </p>
+
+    <input
+        type="text"
+        id="redeemCode"
+        placeholder="Enter Redeem Code"
+        autocomplete="off"
+    >
+
+    <button
+        type="button"
+        id="redeemBtn"
+    >
+        Redeem Code
+    </button>
+
+    <p id="redeemMsg"></p>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="bottomNav"></div>
+
+<script src="bottom.js"></script>
+<script type="module" src="wallet-topup.js"></script>
+
+</body>
+</html>

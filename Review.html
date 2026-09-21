@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    >
+
+    <title>Phoenix Store - Reviews</title>
+
+    <!-- Phoenix Review CSS -->
+    <link rel="stylesheet" href="Review.css">
+
+    <link rel="icon" href="../image/default-avatar.jpg">
+
+    <link rel="stylesheet" href="bottom.css">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="review-header">
+
+        <div class="brand">
+            <span class="brand-fire">🔥</span>
+            <span>PHOENIX STORE</span>
+        </div>
+
+        <button
+            class="back-btn"
+            id="backBtn"
+            aria-label="Go back"
+        >
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+    </header>
+
+
+    <!-- =========================================
+         MAIN REVIEW PAGE
+    ========================================== -->
+
+    <main class="review-page">
+
+        <!-- Hero -->
+
+        <section class="review-hero">
+
+            <div class="verified-badge">
+                <i class="fa-solid fa-circle-check"></i>
+                VERIFIED REVIEWS
+            </div>
+
+            <h1>
+                What Our
+                <span>Customers Say</span>
+            </h1>
+
+            <p>
+                Real reviews from Phoenix Store customers
+                and our gaming community.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================
+             RATING SUMMARY
+        ====================================== -->
+
+        <section class="rating-summary">
+
+            <div class="rating-score" id="averageRating">
+                0.0
+            </div>
+
+            <div
+                class="rating-stars"
+                id="averageStars"
+                aria-label="Average rating"
+            >
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+
+            <div class="total-reviews">
+                <span id="totalReviews">0</span>
+                total reviews
+            </div>
+
+
+            <!-- Rating breakdown -->
+
+            <div class="rating-breakdown">
+
+                <div class="rating-row">
+                    <span>5</span>
+                    <i class="fa-solid fa-star"></i>
+
+                    <div class="rating-bar">
+                        <div
+                            class="rating-fill"
+                            id="bar5"
+                        ></div>
+                    </div>
+
+                    <strong id="count5">0</strong>
+                </div>
+
+
+                <div class="rating-row">
+                    <span>4</span>
+                    <i class="fa-solid fa-star"></i>
+
+                    <div class="rating-bar">
+                        <div
+                            class="rating-fill"
+                            id="bar4"
+                        ></div>
+                    </div>
+
+                    <strong id="count4">0</strong>
+                </div>
+
+
+                <div class="rating-row">
+                    <span>3</span>
+                    <i class="fa-solid fa-star"></i>
+
+                    <div class="rating-bar">
+                        <div
+                            class="rating-fill"
+                            id="bar3"
+                        ></div>
+                    </div>
+
+                    <strong id="count3">0</strong>
+                </div>
+
+
+                <div class="rating-row">
+                    <span>2</span>
+                    <i class="fa-solid fa-star"></i>
+
+                    <div class="rating-bar">
+                        <div
+                            class="rating-fill"
+                            id="bar2"
+                        ></div>
+                    </div>
+
+                    <strong id="count2">0</strong>
+                </div>
+
+
+                <div class="rating-row">
+                    <span>1</span>
+                    <i class="fa-solid fa-star"></i>
+
+                    <div class="rating-bar">
+                        <div
+                            class="rating-fill"
+                            id="bar1"
+                        ></div>
+                    </div>
+
+                    <strong id="count1">0</strong>
+                </div>
+
+            </div>
+
+
+            <!-- Write Review -->
+
+            <div class="write-review-box">
+
+                <h2>Share Your Experience</h2>
+
+                <p>
+                    Help other gamers and tell us
+                    how we did.
+                </p>
+
+                <button
+                    class="write-review-btn"
+                    id="openReviewBtn"
+                >
+                    <i class="fa-solid fa-pen"></i>
+                    Write a Review
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             REVIEWS LIST
+        ====================================== -->
+
+        <section class="reviews-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="small-title">
+                        CUSTOMER EXPERIENCE
+                    </span>
+
+                    <h2>Latest Reviews</h2>
+                </div>
+
+                <div
+                    class="review-count"
+                    id="reviewCountLabel"
+                >
+                    0 Reviews
+                </div>
+
+            </div>
+
+
+            <!-- Loading -->
+
+            <div
+                class="reviews-loading"
+                id="reviewsLoading"
+            >
+                <i class="fa-solid fa-spinner fa-spin"></i>
+                Loading reviews...
+            </div>
+
+
+            <!-- Reviews will be inserted here -->
+
+            <div
+                class="reviews-list"
+                id="reviewsList"
+            >
+            </div>
+
+
+            <!-- No reviews -->
+
+            <div
+                class="no-reviews"
+                id="noReviews"
+                style="display:none;"
+            >
+
+                <div class="empty-icon">
+                    <i class="fa-regular fa-star"></i>
+                </div>
+
+                <h3>No reviews yet</h3>
+
+                <p>
+                    Be the first customer to share
+                    your Phoenix Store experience.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         WRITE REVIEW MODAL
+    ========================================== -->
+
+    <div
+        class="review-modal-overlay"
+        id="reviewModal"
+        style="display:none;"
+    >
+
+        <div class="review-modal">
+
+            <!-- Close -->
+
+            <button
+                class="modal-close"
+                id="closeReviewBtn"
+                aria-label="Close"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+
+            <!-- Icon -->
+
+            <div class="modal-icon">
+                <i class="fa-solid fa-star"></i>
+            </div>
+
+
+            <h2>
+                How was your recent order?
+            </h2>
+
+            <p class="modal-description">
+                Your feedback is valuable.
+                It helps us improve and guides
+                other gamers.
+            </p>
+
+
+            <!-- Rating -->
+
+            <div class="rating-title">
+                Select Your Rating
+            </div>
+
+            <div
+                class="rating-selector"
+                id="ratingSelector"
+            >
+
+                <button
+                    type="button"
+                    class="rating-star"
+                    data-rating="1"
+                    aria-label="1 star"
+                >
+                    <i class="fa-solid fa-star"></i>
+                </button>
+
+                <button
+                    type="button"
+                    class="rating-star"
+                    data-rating="2"
+                    aria-label="2 stars"
+                >
+                    <i class="fa-solid fa-star"></i>
+                </button>
+
+                <button
+                    type="button"
+                    class="rating-star"
+                    data-rating="3"
+                    aria-label="3 stars"
+                >
+                    <i class="fa-solid fa-star"></i>
+                </button>
+
+                <button
+                    type="button"
+                    class="rating-star"
+                    data-rating="4"
+                    aria-label="4 stars"
+                >
+                    <i class="fa-solid fa-star"></i>
+                </button>
+
+                <button
+                    type="button"
+                    class="rating-star"
+                    data-rating="5"
+                    aria-label="5 stars"
+                >
+                    <i class="fa-solid fa-star"></i>
+                </button>
+
+            </div>
+
+
+            <!-- Selected rating -->
+
+            <div
+                class="selected-rating-text"
+                id="selectedRatingText"
+            >
+                Select a rating
+            </div>
+
+
+            <!-- Feedback -->
+
+            <div class="feedback-wrapper">
+
+                <textarea
+                    id="reviewText"
+                    maxlength="500"
+                    placeholder="Tell us more about your experience..."
+                ></textarea>
+
+                <div class="character-count">
+                    <span id="characterCount">0</span>
+                    / 500
+                </div>
+
+            </div>
+
+
+            <!-- Submit -->
+
+            <button
+                type="button"
+                class="submit-review-btn"
+                id="submitReviewBtn"
+            >
+                <i class="fa-solid fa-paper-plane"></i>
+                SUBMIT FEEDBACK
+            </button>
+
+
+            <!-- Maybe later -->
+
+            <button
+                type="button"
+                class="maybe-later-btn"
+                id="maybeLaterBtn"
+            >
+                MAYBE LATER
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         SUCCESS MESSAGE
+    ========================================== -->
+
+    <div
+        class="toast"
+        id="reviewToast"
+    >
+        <i class="fa-solid fa-circle-check"></i>
+
+        <div>
+            <strong>Review Submitted</strong>
+            <span>
+                Your review is waiting for approval.
+            </span>
+        </div>
+
+    </div>
+
+     <div id="bottomNav"></div>
+
+     <script src="bottom.js"></script>
+
+    <!-- Phoenix Review JS -->
+
+    <script
+        type="module"
+        src="Review.js"
+    ></script>
+
+</body>
+</html>

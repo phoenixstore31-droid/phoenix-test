@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PHOENIX TK</title>
+    <meta name="description" content="Soft-UI login form with realistic dual shadows and ambient mouse-tracked lighting.">
+    <meta name="author" content="Aigars Silkalns / Colorlib">
+    <link rel="canonical" href="https://puikinsh.github.io/login-forms/forms/neumorphism/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Neumorphism Login Form">
+    <meta property="og:description" content="Soft-UI login form with realistic dual shadows and ambient mouse-tracked lighting.">
+    <meta property="og:url" content="https://puikinsh.github.io/login-forms/forms/neumorphism/">
+    <meta property="og:image" content="https://phoenix-jk.netlify.app/../image/default-avatar.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Neumorphism Login Form">
+    <meta name="twitter:description" content="Soft-UI login form with realistic dual shadows and ambient mouse-tracked lighting.">
+    <meta name="twitter:image" content="https://phoenix-jk.netlify.app/../image/default-avatar.jpg">
+    <link rel="stylesheet" href="login.css">
+   
+    <link rel="icon" href="../image/default-avatar.jpg">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="neu-icon">
+                    <div class="icon-inner">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                </div>
+                <h2>Welcome back</h2>
+                <p>Please sign in to continue</p>
+            </div>
+            
+            <form class="login-form" id="loginForm" novalidate>
+                <div class="form-group">
+                    <div class="input-group neu-input">
+                        <input type="email" id="email" name="email" required autocomplete="email" placeholder=" ">
+                        <label for="email">Email address</label>
+                        <div class="input-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group neu-input password-group">
+                        <input type="password" id="password" name="password" required autocomplete="current-password" placeholder=" ">
+                        <label for="password">Password</label>
+                        <div class="input-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0110 0v4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <span id="passwordError" style="color:red;display:none;">
+Invalid email or password
+</span>
+                </div>
+
+                <div class="form-options">
+                    <div class="remember-wrapper">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember" class="checkbox-label">
+                            <div class="neu-checkbox">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            Remember me
+                        </label>
+                    </div>
+                <a href="forgot-password.html" class="forgot-link">
+                               Forgot password?
+                            </a>
+                </div>
+
+                <button type="submit" class="neu-button login-btn">
+                    <span class="btn-text">Sign In</span>
+                    <div class="btn-loader">
+                        <div class="neu-spinner"></div>
+                    </div>
+                </button>
+            </form>
+
+           <div class="google-login-section">
+    <div class="or-divider">
+        <span>OR</span>
+    </div>
+
+    <button type="button" id="googleLoginBtn" class="google-login-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#4285F4" d="M21.35 12.23c0-.79-.07-1.55-.23-2.27H12v4.3h5.24a4.48 4.48 0 0 1-1.94 2.94v2.44h3.14c1.84-1.69 2.91-4.18 2.91-7.41z"/>
+            <path fill="#34A853" d="M12 21.7c2.63 0 4.84-.87 6.45-2.36l-3.14-2.44c-.87.58-1.98.92-3.31.92-2.54 0-4.69-1.72-5.46-4.03H3.3v2.52A9.74 9.74 0 0 0 12 21.7z"/>
+            <path fill="#FBBC05" d="M6.54 13.79A5.85 5.85 0 0 1 6.23 12c0-.62.11-1.22.31-1.79V7.69H3.3A9.75 9.75 0 0 0 2.25 12c0 1.57.38 3.05 1.05 4.31l3.24-2.52z"/>
+            <path fill="#EA4335" d="M12 6.18c1.43 0 2.71.49 3.72 1.45l2.79-2.79C16.84 3.29 14.63 2.3 12 2.3a9.74 9.74 0 0 0-8.7 5.39l3.24 2.52C7.31 7.9 9.46 6.18 12 6.18z"/>
+        </svg>
+
+        <span>Continue with Google</span>
+    </button>
+</div>
+
+            <div class="signup-link">
+                <p>Don't have an account? <a href="register.html">Sign up</a></p>
+            </div>
+
+            <div class="success-message" id="successMessage">
+                <div class="success-icon neu-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                </div>
+                <h3>Success!</h3>
+                <p>Redirecting to your dashboard...</p>
+            </div>
+        </div>
+    </div>
+<script type="module">
+
+import { createClient } from 
+"https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+
+const supabaseUrl =
+"https://tvhgxlqqeklrdlgbkosa.supabase.co";
+
+const supabaseKey =
+"sb_publishable_Ep28HPF1SXIXQXBF2i__eg_h_jmjw4I";
+
+const supabase =
+createClient(supabaseUrl, supabaseKey, {
+  auth: {
+    persistSession: true,
+    autoRefreshToken: true,
+    detectSessionInUrl: true
+  }
+});
+
+const { data } = await supabase
+  .from("settings")
+  .select("maintenance")
+  .eq("id", 1)
+  .single();
+
+if (
+  data?.maintenance === true &&
+  !window.location.pathname.endsWith("maintenance.html")
+) {
+  window.location.href = "maintenance.html";
+}
+
+/* Already logged in check */
+
+const { data: { session } } =
+await supabase.auth.getSession();
+
+
+if(session){
+
+localStorage.setItem(
+"userId",
+session.user.id
+);
+
+window.location.replace("index.html");
+
+}
+
+
+
+/* LOGIN */
+
+const loginBtn =
+document.querySelector(".login-btn");
+
+document
+.getElementById("loginForm")
+.addEventListener("submit", async(e)=>{
+
+e.preventDefault();
+
+loginBtn.disabled = true;
+loginBtn.querySelector(".btn-text").innerText = "Wait...";
+
+const email =
+document.getElementById("email").value.trim();
+
+const password =
+document.getElementById("password").value.trim();
+
+const passwordError =
+document.getElementById("passwordError");
+
+passwordError.style.display = "none";
+
+
+
+const {data,error} =
+await supabase.auth.signInWithPassword({
+
+email: email,
+
+password: password
+
+});
+
+
+
+if(error){
+
+loginBtn.disabled = false;
+loginBtn.querySelector(".btn-text").innerText = "Sign In";
+
+passwordError.style.display = "block";
+
+return;
+
+}
+
+
+
+localStorage.setItem(
+"userId",
+data.user.id
+);
+
+passwordError.style.display = "none";
+
+window.location.replace("index.html");
+
+});
+
+
+
+/* GOOGLE LOGIN */
+
+const googleLoginBtn =
+document.getElementById("googleLoginBtn");
+
+googleLoginBtn.addEventListener("click", async () => {
+
+    googleLoginBtn.disabled = true;
+    googleLoginBtn.querySelector("span").innerText = "Connecting...";
+
+    const { error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+            redirectTo: `${window.location.origin}/login.html`
+        }
+    });
+
+    if (error) {
+        console.error("Google Login Error:", error);
+
+        googleLoginBtn.disabled = false;
+        googleLoginBtn.querySelector("span").innerText =
+            "Continue with Google";
+
+        alert("Google login failed. Please try again.");
+    }
+
+});
+
+
+
+</script>
+<style>
+/* TABLET */
+@media (max-width: 1024px) {
+  .card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+/* Desktop */
+.container{
+  width: 80%;
+  margin: auto;
+}
+</style>
+
+</body>
+</html>

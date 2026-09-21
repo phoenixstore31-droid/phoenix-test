@@ -1,0 +1,2171 @@
+/* ==========================================
+PHOENIX RESELLER APPLICATION
+GAMING + PROFESSIONAL DESIGN
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+    color:#fff;
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(239,68,68,.13),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 35%,
+            rgba(59,130,246,.10),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #030712 0%,
+            #07111f 50%,
+            #0b1220 100%
+        );
+    overflow-x:hidden;
+}
+
+
+/* ==========================================
+BACKGROUND GLOW
+========================================== */
+
+.bg-glow{
+    position:fixed;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    filter:blur(100px);
+    pointer-events:none;
+    z-index:0;
+    opacity:.35;
+}
+
+.glow-red{
+    top:-150px;
+    left:-120px;
+    background:#ef4444;
+}
+
+.glow-blue{
+    right:-150px;
+    top:45%;
+    background:#2563eb;
+}
+
+
+/* ==========================================
+PAGE
+========================================== */
+
+.reseller-page{
+    position:relative;
+    z-index:1;
+    min-height:100vh;
+    padding:25px 18px 70px;
+}
+
+.reseller-container{
+    width:min(900px,100%);
+    margin:auto;
+}
+
+
+/* ==========================================
+TOP BAR
+========================================== */
+
+.top-bar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    margin-bottom:28px;
+}
+
+.back-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:11px 16px;
+    border-radius:13px;
+    color:#fff;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:700;
+    background:rgba(255,255,255,.055);
+    border:1px solid rgba(255,255,255,.09);
+    backdrop-filter:blur(15px);
+    transition:.25s ease;
+}
+
+.back-btn:hover{
+    transform:translateX(-3px);
+    border-color:rgba(239,68,68,.55);
+    background:rgba(239,68,68,.09);
+}
+
+.back-btn i{
+    color:#ef4444;
+}
+
+.secure-badge{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    padding:9px 13px;
+    border-radius:999px;
+    background:rgba(34,197,94,.08);
+    border:1px solid rgba(34,197,94,.20);
+    color:#86efac;
+    font-size:12px;
+    font-weight:700;
+}
+
+.secure-badge i{
+    font-size:12px;
+}
+
+
+/* ==========================================
+HERO
+========================================== */
+
+.hero{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    padding:32px;
+    margin-bottom:20px;
+    border-radius:28px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(239,68,68,.14),
+            rgba(255,255,255,.045)
+        );
+    border:1px solid rgba(255,255,255,.09);
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.30);
+    backdrop-filter:blur(20px);
+    overflow:hidden;
+    position:relative;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    right:-80px;
+    top:-90px;
+    border-radius:50%;
+    background:rgba(239,68,68,.12);
+    filter:blur(25px);
+}
+
+.hero-icon{
+    position:relative;
+    z-index:1;
+    width:92px;
+    height:92px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:26px;
+    background:
+        linear-gradient(
+            135deg,
+            #ef4444,
+            #991b1b
+        );
+    font-size:39px;
+    box-shadow:
+        0 15px 40px rgba(239,68,68,.30);
+}
+
+.hero-content{
+    position:relative;
+    z-index:1;
+}
+
+.hero-tag{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:9px;
+    color:#f87171;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1.4px;
+}
+
+.hero-tag span{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#ef4444;
+    box-shadow:0 0 12px #ef4444;
+}
+
+.hero h1{
+    font-size:36px;
+    line-height:1.15;
+    font-weight:800;
+    letter-spacing:-.7px;
+}
+
+.hero h1 span{
+    color:#ef4444;
+}
+
+.hero p{
+    max-width:620px;
+    margin-top:10px;
+    color:#94a3b8;
+    font-size:14px;
+    line-height:1.7;
+}
+
+
+/* ==========================================
+BENEFITS
+========================================== */
+
+.benefits{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-bottom:20px;
+}
+
+.benefit-card{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:16px;
+    border-radius:18px;
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.075);
+    backdrop-filter:blur(15px);
+}
+
+.benefit-icon{
+    width:44px;
+    height:44px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:14px;
+    color:#fff;
+}
+
+.benefit-icon.red{
+    background:rgba(239,68,68,.18);
+    color:#f87171;
+}
+
+.benefit-icon.orange{
+    background:rgba(249,115,22,.18);
+    color:#fb923c;
+}
+
+.benefit-icon.green{
+    background:rgba(34,197,94,.18);
+    color:#4ade80;
+}
+
+.benefit-card strong{
+    display:block;
+    font-size:13px;
+    margin-bottom:4px;
+}
+
+.benefit-card small{
+    color:#64748b;
+    font-size:11px;
+}
+
+
+/* ==========================================
+APPLICATION CARD
+========================================== */
+
+.application-card{
+    padding:30px;
+    border-radius:28px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.065),
+            rgba(255,255,255,.035)
+        );
+    border:1px solid rgba(255,255,255,.09);
+    backdrop-filter:blur(22px);
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.32);
+}
+
+
+/* ==========================================
+SECTION HEADER
+========================================== */
+
+.section-header{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    margin-bottom:22px;
+}
+
+.section-number{
+    width:38px;
+    height:38px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:12px;
+    background:
+        linear-gradient(
+            135deg,
+            #ef4444,
+            #991b1b
+        );
+    font-size:12px;
+    font-weight:800;
+    box-shadow:
+        0 7px 20px rgba(239,68,68,.20);
+}
+
+.section-header h2{
+    font-size:19px;
+    font-weight:800;
+}
+
+.section-header p{
+    margin-top:3px;
+    color:#64748b;
+    font-size:12px;
+}
+
+.business-header{
+    margin-top:35px;
+}
+
+.plan-header{
+    margin-top:38px;
+}
+
+
+/* ==========================================
+FORM GRID
+========================================== */
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.input-group{
+    min-width:0;
+}
+
+.input-group.full{
+    grid-column:1 / -1;
+}
+
+.input-group label{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    margin-bottom:8px;
+    color:#cbd5e1;
+    font-size:12px;
+    font-weight:700;
+}
+
+.input-group label span{
+    color:#ef4444;
+}
+
+.input-group label small{
+    margin-left:auto;
+    color:#64748b;
+    font-size:10px;
+    font-weight:600;
+}
+
+
+/* ==========================================
+INPUT
+========================================== */
+
+.input-wrapper{
+    position:relative;
+}
+
+.input-wrapper > i{
+    position:absolute;
+    left:15px;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:2;
+    color:#64748b;
+    font-size:14px;
+    pointer-events:none;
+}
+
+.input-wrapper input,
+.input-wrapper select,
+.input-wrapper textarea{
+    width:100%;
+    border:none;
+    outline:none;
+    color:#fff;
+    background:rgba(3,7,18,.55);
+    border:1px solid rgba(255,255,255,.085);
+    border-radius:14px;
+    font-family:inherit;
+    font-size:14px;
+    transition:.25s ease;
+}
+
+.input-wrapper input,
+.input-wrapper select{
+    height:50px;
+    padding:0 44px;
+}
+
+.input-wrapper textarea{
+    min-height:115px;
+    padding:15px 44px;
+    resize:vertical;
+    line-height:1.6;
+}
+
+.input-wrapper input::placeholder,
+.input-wrapper textarea::placeholder{
+    color:#475569;
+}
+
+.input-wrapper input:focus,
+.input-wrapper select:focus,
+.input-wrapper textarea:focus{
+    border-color:rgba(239,68,68,.70);
+    background:rgba(239,68,68,.035);
+    box-shadow:
+        0 0 0 3px rgba(239,68,68,.07);
+}
+
+.input-wrapper:focus-within > i{
+    color:#ef4444;
+}
+
+.input-wrapper input:disabled{
+    color:#94a3b8;
+    opacity:.75;
+    cursor:not-allowed;
+}
+
+.input-wrapper select{
+    appearance:none;
+    -webkit-appearance:none;
+    cursor:pointer;
+}
+
+.input-wrapper select option{
+    background:#111827;
+    color:#fff;
+}
+
+
+/* ==========================================
+VERIFIED
+========================================== */
+
+.verified{
+    position:absolute;
+    right:14px;
+    top:50%;
+    transform:translateY(-50%);
+    width:20px;
+    height:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#16a34a;
+    color:#fff;
+    font-size:10px;
+}
+
+
+/* ==========================================
+PLANS
+========================================== */
+
+.plans{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+    margin-bottom:25px;
+}
+
+.plan{
+    position:relative;
+    min-width:0;
+    padding:20px 17px;
+    border-radius:20px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.025)
+        );
+    border:1px solid rgba(255,255,255,.09);
+    cursor:pointer;
+    transition:.3s ease;
+    overflow:hidden;
+}
+
+.plan::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:2px;
+    background:transparent;
+    transition:.3s;
+}
+
+.plan:hover{
+    transform:translateY(-4px);
+    border-color:rgba(239,68,68,.45);
+}
+
+.plan.active{
+    border-color:#ef4444;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(239,68,68,.14),
+            rgba(239,68,68,.035)
+        );
+    box-shadow:
+        0 12px 35px rgba(239,68,68,.13);
+}
+
+.plan.active::before{
+    background:#ef4444;
+    box-shadow:0 0 15px #ef4444;
+}
+
+.plan input{
+    position:absolute;
+    opacity:0;
+    pointer-events:none;
+}
+
+.plan h3{
+    font-size:15px;
+    font-weight:800;
+    letter-spacing:.5px;
+    margin-bottom:8px;
+}
+
+.plan-price{
+    font-size:23px;
+    font-weight:800;
+    color:#fff;
+}
+
+.plan-info{
+    margin-top:8px;
+    color:#4ade80;
+    font-size:11px;
+    font-weight:800;
+}
+
+.plan-description{
+    margin-top:8px;
+    color:#64748b;
+    font-size:11px;
+    line-height:1.5;
+}
+
+
+/* ==========================================
+MESSAGE
+========================================== */
+
+#message{
+    display:none;
+    margin-bottom:18px;
+    padding:14px 16px;
+    border-radius:14px;
+    font-size:13px;
+    line-height:1.5;
+    font-weight:700;
+}
+
+#message.success{
+    display:block;
+    color:#86efac;
+    background:rgba(34,197,94,.09);
+    border:1px solid rgba(34,197,94,.22);
+}
+
+#message.error{
+    display:block;
+    color:#fca5a5;
+    background:rgba(239,68,68,.09);
+    border:1px solid rgba(239,68,68,.22);
+}
+
+
+/* ==========================================
+SUBMIT BUTTON
+========================================== */
+
+.submit-btn{
+    width:100%;
+    min-height:56px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    border:none;
+    border-radius:16px;
+    color:#fff;
+    background:
+        linear-gradient(
+            135deg,
+            #ef4444,
+            #b91c1c
+        );
+    font-family:inherit;
+    font-size:15px;
+    font-weight:800;
+    cursor:pointer;
+    box-shadow:
+        0 12px 30px rgba(239,68,68,.22);
+    transition:.3s ease;
+}
+
+.submit-btn span{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.submit-btn > i{
+    transition:.25s ease;
+}
+
+.submit-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:
+        0 17px 38px rgba(239,68,68,.32);
+}
+
+.submit-btn:hover > i{
+    transform:translateX(5px);
+}
+
+.submit-btn:disabled{
+    opacity:.55;
+    cursor:not-allowed;
+    transform:none;
+    box-shadow:none;
+}
+
+
+/* ==========================================
+NOTICE
+========================================== */
+
+.application-notice{
+    display:flex;
+    align-items:flex-start;
+    gap:13px;
+    margin-top:17px;
+    padding:16px;
+    border-radius:16px;
+    background:rgba(59,130,246,.055);
+    border:1px solid rgba(59,130,246,.12);
+}
+
+.notice-icon{
+    width:35px;
+    height:35px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:11px;
+    background:rgba(59,130,246,.13);
+    color:#60a5fa;
+}
+
+.application-notice strong{
+    display:block;
+    margin-bottom:4px;
+    font-size:12px;
+}
+
+.application-notice p{
+    color:#64748b;
+    font-size:11px;
+    line-height:1.6;
+}
+
+
+/* ==========================================
+FOOTER
+========================================== */
+
+.page-footer{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    margin-top:25px;
+    color:#334155;
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:1.5px;
+}
+
+.page-footer i{
+    color:#ef4444;
+}
+
+
+/* ==========================================
+TABLET
+========================================== */
+
+@media(max-width:760px){
+
+    .reseller-page{
+        padding:18px 14px 55px;
+    }
+
+    .hero{
+        padding:25px 20px;
+        gap:18px;
+    }
+
+    .hero-icon{
+        width:75px;
+        height:75px;
+        border-radius:21px;
+        font-size:31px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .benefits{
+        grid-template-columns:1fr;
+    }
+
+    .benefit-card{
+        padding:14px;
+    }
+
+    .application-card{
+        padding:23px 18px;
+        border-radius:23px;
+    }
+
+    .plans{
+        grid-template-columns:1fr;
+    }
+
+    .plan{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:15px;
+    }
+
+    .plan-info{
+        margin-top:4px;
+    }
+
+}
+
+
+/* =========================================================
+   RESELLER PLANS
+========================================================= */
+
+.plans {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 24px;
+}
+
+
+/* =========================================================
+   PLAN CARD
+========================================================= */
+
+.plan-card {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    user-select: none;
+}
+
+
+/* Hide Radio */
+
+.plan-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CARD INNER
+========================================================= */
+
+.plan-card-inner {
+    position: relative;
+    min-height: 255px;
+
+    padding: 22px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.075),
+            rgba(255,255,255,.025)
+        );
+
+    border: 1px solid rgba(255,255,255,.10);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.22);
+
+    overflow: hidden;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+
+/* Glow */
+
+.plan-card-inner::before {
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    top: -70px;
+    right: -60px;
+
+    border-radius: 50%;
+
+    background: rgba(239,68,68,.16);
+
+    filter: blur(25px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.plan-card:hover .plan-card-inner {
+    transform: translateY(-6px);
+
+    border-color: rgba(239,68,68,.55);
+
+    box-shadow:
+        0 20px 45px rgba(239,68,68,.12);
+}
+
+
+/* =========================================================
+   ACTIVE PLAN
+========================================================= */
+
+.plan-card.active .plan-card-inner {
+
+    border-color: #ef4444;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(239,68,68,.16),
+            rgba(255,255,255,.035)
+        );
+
+    box-shadow:
+        0 0 0 1px rgba(239,68,68,.18),
+        0 20px 50px rgba(239,68,68,.18);
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.plan-top {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   PLAN NAME
+========================================================= */
+
+.plan-name {
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    color: #cbd5e1;
+}
+
+
+/* =========================================================
+   CHECK CIRCLE
+========================================================= */
+
+.plan-check {
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.06);
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    color: transparent;
+
+    transition: .25s;
+}
+
+
+.plan-card.active .plan-check {
+
+    background: #ef4444;
+
+    border-color: #ef4444;
+
+    color: #fff;
+
+    box-shadow:
+        0 0 18px rgba(239,68,68,.45);
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.plan-price {
+
+    position: relative;
+
+    font-size: 28px;
+
+    font-weight: 900;
+
+    letter-spacing: -.5px;
+
+    color: #fff;
+
+    margin-bottom: 7px;
+}
+
+
+/* =========================================================
+   DURATION
+========================================================= */
+
+.plan-duration {
+
+    color: #94a3b8;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.plan-benefits {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    padding-top: 17px;
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+}
+
+
+.plan-benefits div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #cbd5e1;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.plan-benefits i {
+
+    width: 18px;
+
+    color: #ef4444;
+
+    text-align: center;
+}
+
+
+/* Reward icon */
+
+.plan-benefits div:nth-child(2) i {
+
+    color: #f59e0b;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.plan-description {
+
+    margin-top: 15px;
+
+    padding-top: 12px;
+
+    border-top:
+        1px solid rgba(255,255,255,.07);
+
+    color: #94a3b8;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.plans-loading {
+
+    grid-column: 1 / -1;
+
+    min-height: 150px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.plans-error {
+
+    grid-column: 1 / -1;
+
+    min-height: 150px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    background: rgba(239,68,68,.06);
+
+    border:
+        1px solid rgba(239,68,68,.15);
+
+    color: #fca5a5;
+}
+
+
+.plans-error i {
+
+    font-size: 25px;
+
+    margin-bottom: 5px;
+}
+
+
+.plans-error strong {
+
+    color: #fff;
+
+    font-size: 15px;
+}
+
+
+.plans-error small {
+
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .plans {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .plans {
+
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+
+    }
+
+
+    .plan-card-inner {
+
+        min-height: auto;
+
+        padding: 19px;
+
+    }
+
+
+    .plan-price {
+
+        font-size: 25px;
+
+    }
+
+
+    .plan-top {
+
+        margin-bottom: 18px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .plan-card-inner {
+
+        padding: 17px;
+
+    }
+
+
+    .plan-price {
+
+        font-size: 23px;
+
+    }
+
+}
+
+
+/* ==========================================
+MOBILE
+========================================== */
+
+@media(max-width:560px){
+
+    .top-bar{
+        margin-bottom:20px;
+    }
+
+    .back-btn{
+        padding:10px 13px;
+    }
+
+    .secure-badge{
+        font-size:10px;
+        padding:8px 10px;
+    }
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding:28px 18px;
+        border-radius:23px;
+    }
+
+    .hero-icon{
+        width:72px;
+        height:72px;
+    }
+
+    .hero-tag{
+        justify-content:center;
+        font-size:9px;
+    }
+
+    .hero h1{
+        font-size:25px;
+        letter-spacing:-.4px;
+    }
+
+    .hero p{
+        font-size:12px;
+    }
+
+    .benefit-card{
+        padding:13px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+        gap:16px;
+    }
+
+    .input-group.full{
+        grid-column:auto;
+    }
+
+    .section-header{
+        margin-bottom:18px;
+    }
+
+    .section-header h2{
+        font-size:17px;
+    }
+
+    .business-header{
+        margin-top:30px;
+    }
+
+    .plan-header{
+        margin-top:32px;
+    }
+
+    .plan{
+        padding:17px;
+    }
+
+    .plan-price{
+        font-size:21px;
+    }
+
+}
+
+
+/* ==========================================
+SMALL PHONES
+========================================== */
+
+@media(max-width:380px){
+
+    .reseller-page{
+        padding-left:10px;
+        padding-right:10px;
+    }
+
+    .top-bar{
+        gap:8px;
+    }
+
+    .secure-badge{
+        max-width:145px;
+    }
+
+    .hero{
+        padding:24px 14px;
+    }
+
+    .hero h1{
+        font-size:22px;
+    }
+
+    .application-card{
+        padding:20px 14px;
+    }
+
+    .section-number{
+        width:34px;
+        height:34px;
+    }
+
+    .input-wrapper input,
+    .input-wrapper select{
+        height:48px;
+        padding-left:41px;
+    }
+
+    .input-wrapper textarea{
+        padding-left:41px;
+    }
+
+    .submit-btn{
+        font-size:13px;
+    }
+
+}
+
+/* =========================================================
+   RESELLER STATUS POPUP
+========================================================= */
+
+.reseller-status-popup {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+}
+
+
+.reseller-status-popup.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.reseller-popup-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, 0.78);
+
+    backdrop-filter:
+        blur(8px);
+
+}
+
+
+/* =========================================================
+   POPUP BOX
+========================================================= */
+
+.reseller-popup-box {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 470px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 32px 26px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111827,
+            #0f172a
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    box-shadow:
+        0 25px 80px
+        rgba(0,0,0,0.55);
+
+    text-align: center;
+
+    transform:
+        translateY(25px)
+        scale(0.95);
+
+    transition:
+        transform 0.35s ease;
+
+    z-index: 2;
+
+}
+
+
+.reseller-status-popup.show
+.reseller-popup-box {
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.reseller-popup-close {
+
+    position: absolute;
+
+    top: 14px;
+
+    right: 16px;
+
+    width: 36px;
+
+    height: 36px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    color: #fff;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+
+}
+
+
+.reseller-popup-close:hover {
+
+    background:
+        rgba(255,255,255,0.16);
+
+    transform:
+        rotate(90deg);
+
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.reseller-popup-icon {
+
+    width: 78px;
+
+    height: 78px;
+
+    margin:
+        0 auto 18px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 38px;
+
+}
+
+
+.reseller-popup-icon.approved {
+
+    background:
+        rgba(34,197,94,0.12);
+
+    color:
+        #22c55e;
+
+    box-shadow:
+        0 0 35px
+        rgba(34,197,94,0.18);
+
+}
+
+
+.reseller-popup-icon.rejected {
+
+    background:
+        rgba(239,68,68,0.12);
+
+    color:
+        #ef4444;
+
+    box-shadow:
+        0 0 35px
+        rgba(239,68,68,0.18);
+
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.reseller-popup-box h2 {
+
+    margin:
+        0 0 10px;
+
+    color:
+        #ffffff;
+
+    font-size:
+        25px;
+
+    font-weight:
+        800;
+
+}
+
+
+.reseller-popup-subtitle {
+
+    margin:
+        0 auto 22px;
+
+    max-width:
+        380px;
+
+    color:
+        #cbd5e1;
+
+    line-height:
+        1.6;
+
+    font-size:
+        14px;
+
+}
+
+
+/* =========================================================
+   PLAN SUMMARY
+========================================================= */
+
+.reseller-plan-summary {
+
+    padding:
+        8px 16px;
+
+    margin-bottom:
+        18px;
+
+    border-radius:
+        16px;
+
+    background:
+        rgba(255,255,255,0.045);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+}
+
+
+.summary-row {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        15px;
+
+    padding:
+        13px 0;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.07);
+
+    text-align:
+        left;
+
+}
+
+
+.summary-row:last-child {
+
+    border-bottom:
+        none;
+
+}
+
+
+.summary-row span {
+
+    color:
+        #94a3b8;
+
+    font-size:
+        13px;
+
+}
+
+
+.summary-row strong {
+
+    color:
+        #ffffff;
+
+    font-size:
+        14px;
+
+}
+
+
+.summary-row.discount strong {
+
+    color:
+        #22c55e;
+
+    font-size:
+        17px;
+
+}
+
+
+/* =========================================================
+   VALIDITY
+========================================================= */
+
+.reseller-validity {
+
+    padding:
+        18px;
+
+    margin-bottom:
+        20px;
+
+    border-radius:
+        18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34,197,94,0.10),
+            rgba(59,130,246,0.08)
+        );
+
+    border:
+        1px solid
+        rgba(34,197,94,0.18);
+
+}
+
+
+.validity-title {
+
+    color:
+        #e2e8f0;
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+
+    margin-bottom:
+        13px;
+
+}
+
+
+.validity-title i {
+
+    margin-right:
+        6px;
+
+    color:
+        #22c55e;
+
+}
+
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+.countdown {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        7px;
+
+    margin-bottom:
+        12px;
+
+}
+
+
+.countdown span {
+
+    min-width:
+        48px;
+
+    padding:
+        9px 7px;
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(0,0,0,0.28);
+
+    color:
+        #ffffff;
+
+    font-size:
+        18px;
+
+    font-weight:
+        800;
+
+}
+
+
+.countdown small {
+
+    color:
+        #94a3b8;
+
+    font-size:
+        10px;
+
+    margin-right:
+        3px;
+
+}
+
+
+.reseller-validity > small {
+
+    color:
+        #94a3b8;
+
+    font-size:
+        11px;
+
+}
+
+
+.reseller-validity > small strong {
+
+    color:
+        #e2e8f0;
+
+}
+
+
+/* =========================================================
+   REJECTION BOX
+========================================================= */
+
+.rejection-box {
+
+    padding:
+        17px;
+
+    margin-bottom:
+        16px;
+
+    border-radius:
+        16px;
+
+    text-align:
+        left;
+
+    background:
+        rgba(239,68,68,0.08);
+
+    border:
+        1px solid
+        rgba(239,68,68,0.18);
+
+}
+
+
+.rejection-title {
+
+    margin-bottom:
+        9px;
+
+    color:
+        #f87171;
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+
+}
+
+
+.rejection-title i {
+
+    margin-right:
+        5px;
+
+}
+
+
+.rejection-box p {
+
+    margin:
+        0;
+
+    color:
+        #cbd5e1;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.6;
+
+    word-break:
+        break-word;
+
+}
+
+
+.rejection-note {
+
+    margin-bottom:
+        20px;
+
+    color:
+        #94a3b8;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.5;
+
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.reseller-popup-button {
+
+    width:
+        100%;
+
+    min-height:
+        50px;
+
+    border:
+        none;
+
+    border-radius:
+        14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #22c55e,
+            #16a34a
+        );
+
+    color:
+        #ffffff;
+
+    font-size:
+        14px;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        0 8px 25px
+        rgba(34,197,94,0.20);
+
+    transition:
+        0.2s ease;
+
+}
+
+
+.reseller-popup-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(34,197,94,0.30);
+
+}
+
+
+.reseller-popup-button i {
+
+    margin-left:
+        7px;
+
+}
+
+
+.reseller-popup-button.rejected-button {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ef4444,
+            #dc2626
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(239,68,68,0.20);
+
+}
+
+
+.reseller-popup-button.rejected-button:hover {
+
+    box-shadow:
+        0 12px 30px
+        rgba(239,68,68,0.30);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .reseller-status-popup {
+
+        padding:
+            14px;
+
+    }
+
+
+    .reseller-popup-box {
+
+        max-width:
+            100%;
+
+        padding:
+            28px 18px 20px;
+
+        border-radius:
+            20px;
+
+    }
+
+
+    .reseller-popup-icon {
+
+        width:
+            68px;
+
+        height:
+            68px;
+
+        font-size:
+            32px;
+
+    }
+
+
+    .reseller-popup-box h2 {
+
+        font-size:
+            22px;
+
+    }
+
+
+    .summary-row {
+
+        padding:
+            11px 0;
+
+    }
+
+
+    .countdown span {
+
+        min-width:
+            42px;
+
+        font-size:
+            16px;
+
+    }
+
+}

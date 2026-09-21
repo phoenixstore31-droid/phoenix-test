@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Order Details</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="OrderDetails.css">
+  <link rel="stylesheet" href="bottom.css">
+</head>
+
+<body>
+
+<div class="header">
+
+    <div class="logo-title">
+        🛒 Order Details
+    </div>
+
+    <div class="header-right">
+
+        <div class="wallet-pill"
+             onclick="location.href='wallet-topup.html'">
+
+            💰
+            <span id="walletBalance">
+                Rs. 0.00
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="order-container">
+
+    <div class="order-card">
+
+        <div class="product-image">
+
+            <img
+            id="productImage"
+            src="image/default-avatar.jpg"
+            alt="Product">
+
+        </div>
+
+
+        <h2 id="productName">
+
+            Loading...
+
+        </h2>
+
+        <h3 id="productPrice">
+
+            Rs.0.00
+
+        </h3>
+
+
+        <div class="input-group">
+
+            <label>
+
+                🎮 Game UID
+
+            </label>
+
+            <input
+            type="text"
+            id="uid"
+            placeholder="Enter your Game UID">
+
+        </div>
+
+
+        <div class="quantity-box">
+
+    <label>Quantity</label>
+
+    <div class="qty-controls">
+
+        <button type="button" id="minusBtn">−</button>
+
+        <span id="quantity">1</span>
+
+        <button type="button" id="plusBtn">+</button>
+
+    </div>
+
+</div>
+
+<div class="total-box">
+
+    <span>Total Price</span>
+
+    <strong id="totalPrice">
+
+        Rs.0.00
+
+    </strong>
+
+</div>
+
+
+        <div class="wallet-box">
+
+            <span>
+
+                Wallet Balance
+
+            </span>
+
+            <strong id="walletBalanceCard">
+
+                Rs.0.00
+
+            </strong>
+
+        </div>
+
+
+        <button
+        id="submitBtn">
+
+            🚀 Submit Top Up
+
+        </button>
+
+
+        <p
+        id="msg">
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<div id="bottomNav"></div>
+
+<script src="bottom.js"></script>
+<script type="module" src="OrderDetails.js"></script>
+</body>
+</html>

@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Phoenix Admin</title>
+
+<link rel="stylesheet" href="admin.css">
+
+</head>
+
+<body>
+
+<!-- Loading -->
+
+<div id="loadingScreen">
+
+<div class="loader"></div>
+
+<p>Loading Dashboard...</p>
+
+</div>
+
+
+<!-- Sidebar -->
+
+<aside class="sidebar" id="sidebar">
+
+<div class="logo">
+
+<img src="../image/default-avatar.jpg" alt="">
+
+<h2>PHOENIX</h2>
+
+</div>
+
+<nav>
+
+<button onclick="showDashboard()">
+
+🏠 Dashboard
+
+</button>
+
+<button onclick="viewUsers()">
+
+👤 Users
+
+</button>
+
+<button onclick="viewWalletTopups()">
+
+💰 Wallet
+
+</button>
+
+<button onclick="viewOrders()">
+
+📦 Orders
+
+</button>
+
+<button onclick="viewRedeemCodes()">
+
+🎟️ Redeem Codes
+
+</button>
+
+<button onclick="viewGarenaShells()">
+    🔥 Garena Shells
+</button>
+
+<button onclick="viewGarenaShellStock()">
+    <i class="fa-solid fa-boxes-stacked"></i>
+    <span>🔥 Stocks Garena Shell</span>
+</button>
+
+<button onclick="viewProducts()">
+
+🔥 Free fire
+
+</button>
+
+<button onclick="viewCodMobileProducts()">
+    🎯 COD Mobile
+</button>
+
+<button onclick="viewDeltaForceProducts()">
+    🎯 Delta Force
+</button>
+
+<button onclick="viewResellerApplications()">
+
+🤝 Resellers
+
+</button>
+
+<button onclick="viewReviews()">
+
+    ⭐ Reviews
+
+</button>
+
+<button onclick="viewResellerPlans()">
+
+⚙️ Reseller Plans
+
+</button>
+
+<button onclick="viewTopups()">
+
+✅ Success
+
+</button>
+
+<button onclick="viewRejected()">
+
+❌ Rejected
+
+</button>
+
+<button onclick="viewPending()">
+
+⏳ Pending
+
+</button>
+
+<button onclick="resellerSystemPage()">
+
+🤝 Reseller System
+
+</button>
+
+<button onclick="maintenancePage()">
+
+🛠 Maintenance
+
+</button>
+
+<button onclick="logout()">
+
+🚪 Logout
+
+</button>
+
+</nav>
+
+</aside>
+
+<!-- Main -->
+
+<div class="main">
+
+<!-- Topbar -->
+
+<header class="topbar">
+
+<div class="left">
+
+<button
+class="menuBtn"
+onclick="openSidebar()">
+
+☰
+
+</button>
+
+<h1>
+
+Phoenix Admin Dashboard
+
+</h1>
+
+</div>
+
+<div class="right">
+
+<div class="notify">
+
+🔔
+
+<span>3</span>
+
+</div>
+
+<div class="adminProfile">
+
+<div class="avatar" id="adminAvatar">
+
+A
+
+</div>
+
+<div>
+
+<h3 id="adminEmail">
+
+Administrator
+
+</h3>
+
+<p>
+
+Online
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- Dashboard Cards -->
+
+<section class="dashboardCards">
+
+<div class="statCard">
+
+<div class="icon">👤</div>
+
+<div class="info">
+
+<h4>Total Users</h4>
+
+<h2 id="usersCount">0</h2>
+
+</div>
+
+</div>
+
+<div class="statCard">
+
+<div class="icon">📦</div>
+
+<div class="info">
+
+<h4>Total Orders</h4>
+
+<h2 id="ordersCount">0</h2>
+
+</div>
+
+</div>
+
+<div class="statCard">
+
+<div class="icon">✅</div>
+
+<div class="info">
+
+<h4>Success</h4>
+
+<h2 id="topupCount">0</h2>
+
+</div>
+
+</div>
+
+<div class="statCard">
+
+<div class="icon">💰</div>
+
+<div class="info">
+
+<h4>Wallet Pending</h4>
+
+<h2 id="walletPendingCount">0</h2>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Revenue -->
+
+<section class="analyticsGrid">
+
+<div class="analyticsCard">
+
+<h3>Today's Revenue</h3>
+
+<h1 id="todayRevenue">
+
+Rs.0
+
+</h1>
+
+<p>
+
+Today's completed orders
+
+</p>
+
+</div>
+
+<div class="analyticsCard">
+
+<h3>Total Revenue</h3>
+
+<h1 id="totalRevenue">
+
+Rs.0
+
+</h1>
+
+<p>
+
+Lifetime earnings
+
+</p>
+
+</div>
+
+<div class="analyticsCard">
+
+<h3>Pending Orders</h3>
+
+<h1 id="pendingOrders">
+
+0
+
+</h1>
+
+<p>
+
+Waiting for approval
+
+</p>
+
+</div>
+
+</section>
+
+<!-- Main Content -->
+
+<section class="contentLayout">
+
+<div class="leftContent">
+
+<div class="panel">
+
+<div class="panelHeader">
+
+<h2>
+
+Recent Activities
+
+</h2>
+
+</div>
+
+<div
+id="contentBox"
+class="panelBody">
+
+Loading...
+
+</div>
+
+<div
+id="deltaForceAdminProducts"
+class="panelBody"
+style="display:none;">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="rightContent">
+
+<div class="panel">
+
+<div class="panelHeader">
+
+<h2>
+
+Quick Status
+
+</h2>
+
+</div>
+
+<div class="quickStats">
+
+<div>
+
+<h3>
+
+Users
+
+</h3>
+
+<p id="quickUsers">
+
+0
+
+</p>
+
+</div>
+
+<div>
+
+<h3>
+
+Orders
+
+</h3>
+
+<p id="quickOrders">
+
+0
+
+</p>
+
+</div>
+
+<div>
+
+<h3>
+
+Wallet
+
+</h3>
+
+<p id="quickWallet">
+
+0
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="panel">
+
+<div class="panelHeader">
+
+<h2>
+
+Server Status
+
+</h2>
+
+</div>
+
+<div class="serverStatus">
+
+<div class="statusItem">
+
+<span class="dot green"></span>
+
+Supabase Connected
+
+</div>
+
+<div class="statusItem">
+
+<span class="dot green"></span>
+
+Authentication
+
+</div>
+
+<div class="statusItem">
+
+<span class="dot green"></span>
+
+Realtime Active
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Wallet Popup -->
+
+<div class="wallet-popup" id="walletPopup">
+
+<div class="wallet-box">
+
+<h2>💰 Wallet Topup</h2>
+
+<p>
+
+Enter Wallet Amount
+
+</p>
+
+<input
+type="number"
+id="walletAmount"
+placeholder="Amount">
+
+<div class="wallet-buttons">
+
+<button id="walletCancel">
+
+Cancel
+
+</button>
+
+<button id="walletOk">
+
+Success
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Toast -->
+
+<div id="toast" class="toast">
+
+<span id="toastMessage">
+
+Success
+
+</span>
+
+</div>
+
+<!-- Notification Popup -->
+
+<div class="notificationPopup" id="notificationPopup">
+
+<div class="notificationHeader">
+
+<h2>
+
+Notifications
+
+</h2>
+
+</div>
+
+<div class="notificationBody">
+
+<div class="notifyItem">
+
+🎉 Welcome Administrator
+
+</div>
+
+<div class="notifyItem">
+
+📦 Orders Loaded
+
+</div>
+
+<div class="notifyItem">
+
+💰 Wallet System Active
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Footer -->
+
+<footer class="footer">
+
+<p>
+
+© 2026 Phoenix Store Admin Panel
+
+</p>
+
+<p>
+
+Powered By Phoenix Systems
+
+</p>
+
+</footer>
+
+<!-- Overlay -->
+
+<div
+class="overlay"
+id="overlay"
+onclick="closeSidebar()">
+
+</div>
+
+<!-- Admin Script -->
+
+<script type="module"
+src="admin.js">
+
+</script>
+
+</div>
+
+
+<!-- =========================================
+     REJECT RESELLER POPUP
+========================================= -->
+
+<div id="rejectResellerPopup" class="reject-popup">
+
+    <div class="reject-popup-box">
+
+        <button
+            class="reject-close"
+            onclick="closeRejectPopup()">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="reject-icon">
+
+            <i class="fa-solid fa-circle-xmark"></i>
+
+        </div>
+
+
+        <h2>
+            Reject Application
+        </h2>
+
+
+        <p class="reject-subtitle">
+
+            Please provide a reason for
+            rejecting this reseller application.
+
+        </p>
+
+
+        <div class="reject-input-box">
+
+            <i class="fa-solid fa-message"></i>
+
+            <textarea
+                id="rejectReasonInput"
+                placeholder="Enter rejection reason..."
+                maxlength="500">
+            </textarea>
+
+        </div>
+
+
+        <div class="reject-counter">
+
+            <span id="rejectCharCount">
+                0
+            </span>/500
+
+        </div>
+
+
+        <div class="reject-actions">
+
+            <button
+                class="reject-cancel-btn"
+                onclick="closeRejectPopup()">
+
+                Cancel
+
+            </button>
+
+
+            <button
+                class="reject-confirm-btn"
+                onclick="confirmRejectReseller()">
+
+                <i class="fa-solid fa-xmark"></i>
+
+                Reject Application
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>

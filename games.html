@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width,
+        initial-scale=1.0,
+        maximum-scale=1.0,
+        user-scalable=no">
+
+    <title>Phoenix Store — Games</title>
+
+    <link rel="icon" href="../image/default-avatar.jpg">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link
+        rel="stylesheet"
+        href="games.css">
+    <link
+        rel="stylesheet"
+        href="bottom.css">
+
+</head>
+
+<body>
+
+<div class="neon-bg"></div>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header class="header">
+
+    <div class="logo-title">
+
+        <span class="logo-fire">🔥</span>
+
+        <span>PHOENIX STORE</span>
+
+    </div>
+
+
+    <div class="header-right">
+
+        <div
+            class="wallet-pill"
+            onclick="location.href='wallet-topup.html'">
+
+            💰
+
+            <span id="walletBalance">
+                Rs. 0.00
+            </span>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main class="games-container">
+
+
+    <!-- HERO -->
+
+    <section class="games-hero">
+
+        <div class="hero-icon">
+
+            <i class="fa-solid fa-gamepad"></i>
+
+        </div>
+
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+                PHOENIX GAMING
+            </span>
+
+            <h1>
+                Choose Your Game
+            </h1>
+
+            <p>
+                Select a game to explore available
+                top-up services and digital products.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SEARCH
+    ====================================== -->
+
+    <div class="game-search">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+            type="search"
+            id="gameSearch"
+            placeholder="Search games..."
+            autocomplete="off">
+
+        <button
+            id="clearSearch"
+            type="button"
+            aria-label="Clear search">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+
+    <!-- =====================================
+         RESULT INFO
+    ====================================== -->
+
+    <div class="games-toolbar">
+
+        <div>
+
+            <span class="toolbar-label">
+                AVAILABLE GAMES
+            </span>
+
+            <strong id="gameCount">
+                0 Games
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         GAME GRID
+    ====================================== -->
+
+    <section
+        id="gamesContainer"
+        class="games-grid">
+
+        <div class="games-loading">
+
+            <div class="loading-spinner"></div>
+
+            <p>
+                Loading games...
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         EMPTY SEARCH
+    ====================================== -->
+
+    <div
+        id="emptySearch"
+        class="empty-search"
+        style="display:none;">
+
+        <div class="empty-icon">
+
+            <i class="fa-solid fa-gamepad"></i>
+
+        </div>
+
+        <h3>
+            No Games Found
+        </h3>
+
+        <p>
+            Try searching with another game name.
+        </p>
+
+    </div>
+
+
+
+    <div
+        id="emptySearch"
+        class="empty-search"
+        style="display:none;">
+
+        <div class="empty-icon">
+
+            <i class="fa-solid fa-gamepad"></i>
+
+        </div>
+
+        <h3>
+            No Games Found
+        </h3>
+
+        <p>
+            Try searching with another game name.
+        </p>
+
+    </div>
+
+    <!-- =====================================
+     SUBSCRIPTIONS
+====================================== -->
+
+<section class="subscriptions-section">
+
+    <div class="subscriptions-header">
+
+        <div>
+
+            <span class="subscription-label">
+                PHOENIX PREMIUM
+            </span>
+
+            <h2>
+                ✨ Subscriptions
+            </h2>
+
+            <p>
+                Premium digital services are coming soon.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- SUBSCRIPTION GRID -->
+
+    <section
+        id="subscriptionsContainer"
+        class="subscriptions-grid">
+
+        <div class="subscriptions-loading">
+
+            <div class="loading-spinner"></div>
+
+            <p>
+                Loading subscriptions...
+            </p>
+
+        </div>
+
+    </section>
+
+</section>
+
+
+</main>
+
+<!-- =========================================
+     COMING SOON POPUP
+========================================= -->
+
+<div
+    id="comingSoonPopup"
+    class="coming-soon-overlay">
+
+    <div class="coming-soon-popup">
+
+        <button
+            id="comingSoonClose"
+            class="popup-close"
+            type="button">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="popup-logo">
+
+            🔥
+
+        </div>
+
+
+        <span class="popup-brand">
+            PHOENIX STORE
+        </span>
+
+
+        <div class="popup-icon">
+
+            <i class="fa-solid fa-hourglass-half"></i>
+
+        </div>
+
+
+        <h2>
+            Coming Soon
+        </h2>
+
+
+        <p class="popup-title">
+
+            We're getting this game ready for you.
+
+        </p>
+
+
+        <p class="popup-description">
+
+            This game is currently being prepared
+            for our store. Our top-up service will
+            be available soon.
+
+        </p>
+
+
+        <div class="popup-contact">
+
+            <div class="contact-icon">
+
+                <i class="fa-solid fa-headset"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    Need more information?
+                </span>
+
+                <strong>
+                    +94 75 537 7823
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <p class="popup-footer">
+
+            Stay tuned for the launch. ❤️
+
+        </p>
+
+
+        <button
+            id="comingSoonOk"
+            class="popup-ok"
+            type="button">
+
+            Got It
+
+            <i class="fa-solid fa-check"></i>
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<div id="bottomNav"></div>
+
+<script src="bottom.js"></script>
+
+<script
+    type="module"
+    src="games.js">
+</script>
+
+</body>
+
+</html>

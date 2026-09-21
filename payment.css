@@ -1,0 +1,488 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+body{
+    background:
+        radial-gradient(circle at 15% 10%,rgba(255,0,0,.12),transparent 30%),
+        radial-gradient(circle at 90% 85%,rgba(180,0,0,.10),transparent 30%),
+        linear-gradient(180deg,#050505,#0b0b0b,#050505);
+
+    color:#fff;
+    min-height:100vh;
+    padding:20px;
+    padding-bottom:90px;
+    overflow-x:hidden;
+}
+
+/* ================================
+   CONTAINER
+================================ */
+
+.container{
+    width:100%;
+    max-width:430px;
+    margin:auto;
+}
+
+/* ================================
+   PAYMENT HEADER
+================================ */
+
+.payment-header{
+    text-align:center;
+    margin-bottom:28px;
+}
+
+.logo{
+    width:90px;
+    height:90px;
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:42px;
+
+    background:
+        radial-gradient(circle,#ff3030,#9d0000 65%,#450000);
+
+    border:2px solid #ff1a1a;
+
+    box-shadow:
+        0 0 15px rgba(255,0,0,.8),
+        0 0 35px rgba(255,0,0,.45),
+        inset 0 0 20px rgba(255,0,0,.35);
+
+    margin-bottom:16px;
+
+    animation:redPulse 2.5s infinite;
+}
+
+.payment-header h2{
+    font-size:28px;
+    font-weight:800;
+    letter-spacing:1.5px;
+
+    color:#fff;
+
+    text-shadow:
+        0 0 8px rgba(255,0,0,.5);
+}
+
+.payment-header p{
+    margin-top:8px;
+
+    font-size:14px;
+
+    color:#aaa;
+}
+
+/* ================================
+   BANK CARD
+================================ */
+
+.payment-card{
+
+    position:relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30,30,30,.97),
+            rgba(10,10,10,.98)
+        );
+
+    border:1px solid rgba(255,0,0,.25);
+
+    border-radius:18px;
+
+    padding:18px;
+
+    margin-bottom:20px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.55),
+        0 0 15px rgba(255,0,0,.08);
+
+    transition:.3s;
+}
+
+/* Premium red light line */
+
+.payment-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #ff0000,
+            #ff4d4d,
+            #ff0000,
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px #ff0000;
+}
+
+.payment-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:rgba(255,0,0,.65);
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.7),
+        0 0 25px rgba(255,0,0,.25);
+}
+
+/* ================================
+   CARD HEADER
+================================ */
+
+.card-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:18px;
+}
+
+.bank{
+
+    font-size:20px;
+    font-weight:800;
+
+    color:#ff3333;
+
+    text-shadow:
+        0 0 10px rgba(255,0,0,.5);
+}
+
+/* ================================
+   COPY BUTTON
+================================ */
+
+.copy-btn{
+
+    width:48px;
+    height:48px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff2020,
+            #a80000
+        );
+
+    color:#fff;
+
+    border:1px solid rgba(255,100,100,.4);
+
+    box-shadow:
+        0 0 12px rgba(255,0,0,.4);
+
+    transition:.3s;
+}
+
+.copy-btn:hover{
+
+    transform:scale(1.08);
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3b3b,
+            #c00000
+        );
+
+    box-shadow:
+        0 0 22px rgba(255,0,0,.75);
+}
+
+.copy-btn:active{
+    transform:scale(.94);
+}
+
+/* ================================
+   ACCOUNT DETAILS
+================================ */
+
+.row{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:13px 0;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.07);
+}
+
+.row:last-child{
+    border-bottom:none;
+}
+
+.row span{
+
+    color:#8f8f8f;
+
+    font-size:14px;
+}
+
+.row b{
+
+    font-size:15px;
+
+    color:#f2f2f2;
+
+    word-break:break-all;
+}
+
+/* ================================
+   NOTE
+================================ */
+
+.note{
+
+    margin-top:15px;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    background:
+        rgba(255,0,0,.07);
+
+    border:
+        1px solid rgba(255,0,0,.28);
+
+    color:#ff8c8c;
+
+    font-size:14px;
+
+    line-height:1.5;
+
+    box-shadow:
+        inset 0 0 15px rgba(255,0,0,.04);
+}
+
+/* ================================
+   BANK ACCENT
+================================ */
+
+.hnb{
+    border-left:5px solid #ff1616;
+}
+
+.boc{
+    border-left:5px solid #ff1616;
+}
+
+.ezcash{
+    border-left:5px solid #ff1616;
+}
+
+/* ================================
+   GLOW ANIMATION
+================================ */
+
+@keyframes redPulse{
+
+    0%{
+        box-shadow:
+            0 0 12px rgba(255,0,0,.45),
+            0 0 25px rgba(255,0,0,.15);
+    }
+
+    50%{
+        box-shadow:
+            0 0 22px rgba(255,0,0,.8),
+            0 0 45px rgba(255,0,0,.35);
+    }
+
+    100%{
+        box-shadow:
+            0 0 12px rgba(255,0,0,.45),
+            0 0 25px rgba(255,0,0,.15);
+    }
+}
+
+/* ================================
+   CARD GLOW
+================================ */
+
+@keyframes cardGlow{
+
+    0%{
+        box-shadow:
+            0 8px 30px rgba(0,0,0,.55),
+            0 0 8px rgba(255,0,0,.08);
+    }
+
+    50%{
+        box-shadow:
+            0 8px 30px rgba(0,0,0,.65),
+            0 0 20px rgba(255,0,0,.18);
+    }
+
+    100%{
+        box-shadow:
+            0 8px 30px rgba(0,0,0,.55),
+            0 0 8px rgba(255,0,0,.08);
+    }
+}
+
+.payment-card{
+    animation:cardGlow 3s infinite;
+}
+
+/* ================================
+   COPY SUCCESS
+================================ */
+
+.copy-btn.copied{
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3333,
+            #990000
+        );
+
+    transform:scale(1.08);
+
+    box-shadow:
+        0 0 25px rgba(255,0,0,.8);
+}
+
+/* ================================
+   BACKGROUND GLOW
+================================ */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    top:-200px;
+    left:-200px;
+
+    width:500px;
+    height:500px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,0,0,.13),
+            transparent 70%
+        );
+
+    pointer-events:none;
+
+    z-index:-1;
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    bottom:-200px;
+    right:-200px;
+
+    width:500px;
+    height:500px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(180,0,0,.12),
+            transparent 70%
+        );
+
+    pointer-events:none;
+
+    z-index:-1;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media(max-width:480px){
+
+    body{
+        padding:15px;
+        padding-bottom:90px;
+    }
+
+    .logo{
+        width:75px;
+        height:75px;
+        font-size:34px;
+    }
+
+    .payment-header{
+        margin-bottom:22px;
+    }
+
+    .payment-header h2{
+        font-size:23px;
+    }
+
+    .payment-header p{
+        font-size:13px;
+    }
+
+    .payment-card{
+        padding:16px;
+        border-radius:17px;
+    }
+
+    .bank{
+        font-size:17px;
+    }
+
+    .row{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:5px;
+    }
+
+    .copy-btn{
+        width:42px;
+        height:42px;
+    }
+}

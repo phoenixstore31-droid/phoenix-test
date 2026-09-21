@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width,
+        initial-scale=1.0,
+        maximum-scale=1.0,
+        user-scalable=no">
+
+    <meta name="trustpilot-one-time-domain-verification-id" content="b9ac5ee1-e3db-48fc-b210-4616e41ebbe5"/>
+
+    <title>Phoenix Store</title>
+
+    <link
+        rel="icon"
+        href="../image/default-avatar.jpg">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link
+        rel="stylesheet"
+        href="index.css">
+
+    <link
+        rel="stylesheet"
+        href="bottom.css">
+
+    <script>
+        (function(w,d,s,r,n){w.TrustpilotObject=n;w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)};
+            a=d.createElement(s);a.async=1;a.src=r;a.type='text/java'+s;f=d.getElementsByTagName(s)[0];
+            f.parentNode.insertBefore(a,f)})(window,document,'script', 'https://invitejs.trustpilot.com/tp.min.js', 'tp');
+            tp('register', '2XGVYV6fBpvRmeR8');
+    </script>
+
+     <link rel="manifest" href="/PWA/manifest.json">
+     <meta name="mobile-web-app-capable" content="yes">
+     <meta name="apple-mobile-web-app-capable" content="yes">
+     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+     <meta name="apple-mobile-web-app-title" content="Phoenix Store">
+
+
+</head>
+
+
+<body>
+
+<div class="page-bg"></div>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header class="header">
+
+    <div class="logo-title">
+
+        <span class="logo-fire">
+            🔥
+        </span>
+
+        <span>
+            PHOENIX STORE
+        </span>
+
+    </div>
+
+
+    <div class="header-right">
+
+        <div
+            class="wallet-pill"
+            id="walletButton">
+
+            <i class="fa-solid fa-wallet"></i>
+
+            <span id="liveBalance">
+                Login
+            </span>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main class="home-container">
+
+
+<!-- =========================================
+     HERO SLIDER
+========================================= -->
+
+<section class="hero-section">
+
+    <div
+        id="heroSlider"
+        class="hero-slider">
+
+
+        <!-- HERO 1 -->
+
+        <div class="hero-slide active">
+
+            <img
+                src="../image/home-1.jpg"
+                alt="Phoenix Store"
+                loading="eager">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <span class="hero-small">
+                    PHOENIX STORE
+                </span>
+
+                <h1>
+                    Power Up<br>
+                    Your Game
+                </h1>
+
+                <p>
+                    Fast, secure and reliable
+                    digital top-up services.
+                </p>
+
+                <button
+                    class="hero-button"
+                    onclick="goTopup()">
+
+                    Start Top-Up
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- HERO 2 -->
+
+        <div class="hero-slide">
+
+            <img
+                src="../image/home-2.jpg"
+                alt="Gaming Top Up">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <span class="hero-small">
+                    FAST DELIVERY
+                </span>
+
+                <h1>
+                    Top Up<br>
+                    Without Waiting
+                </h1>
+
+                <p>
+                    Simple ordering with
+                    reliable service.
+                </p>
+
+                <button
+                    class="hero-button"
+                    onclick="goTopup()">
+
+                    Shop Now
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- HERO 3 -->
+
+        <div class="hero-slide">
+
+            <img
+                src="../image/home-3.jpg"
+                alt="Phoenix Gaming">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <span class="hero-small">
+                    SECURE SERVICE
+                </span>
+
+                <h1>
+                    Play More.<br>
+                    Worry Less.
+                </h1>
+
+                <p>
+                    Trusted payment and
+                    support experience.
+                </p>
+
+                <button
+                    class="hero-button"
+                    onclick="goPayment()">
+
+                    Payment Methods
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- HERO 4 -->
+
+        <div class="hero-slide">
+
+            <img
+                src="../image/home-4.jpg"
+                alt="Phoenix Offers">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <span class="hero-small">
+                    PHOENIX OFFERS
+                </span>
+
+                <h1>
+                    More Value.<br>
+                    More Rewards.
+                </h1>
+
+                <p>
+                    Discover our latest
+                    products and offers.
+                </p>
+
+                <button
+                    class="hero-button"
+                    onclick="goTopup()">
+
+                    Explore Now
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- HERO 5 -->
+
+        <div class="hero-slide">
+
+            <img
+                src="../image/home-5.jpg"
+                alt="Phoenix Support">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <span class="hero-small">
+                    PHOENIX SUPPORT
+                </span>
+
+                <h1>
+                    We're Here<br>
+                    To Help
+                </h1>
+
+                <p>
+                    Need assistance?
+                    Contact our support team.
+                </p>
+
+                 <button
+                  class="hero-button"
+                  onclick="goWhatsApp()">
+
+                    Contact Support
+
+                  <i class="fa-brands fa-whatsapp"></i>
+
+                 </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- SLIDER DOTS -->
+
+        <div
+            id="heroDots"
+            class="hero-dots">
+
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+
+        <!-- SLIDER ARROWS -->
+
+        <button
+            id="heroPrev"
+            class="hero-arrow hero-prev"
+            type="button">
+
+            <i class="fa-solid fa-chevron-left"></i>
+
+        </button>
+
+
+        <button
+            id="heroNext"
+            class="hero-arrow hero-next"
+            type="button">
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     QUICK ACTIONS
+========================================= -->
+
+<section class="quick-section">
+
+    <div class="section-heading">
+
+        <span>
+            QUICK ACCESS
+        </span>
+
+        <h2>
+            What do you need?
+        </h2>
+
+    </div>
+
+
+    <div class="quick-grid">
+
+
+        <button
+            class="quick-card"
+            onclick="goTopup()">
+
+            <div class="quick-icon red">
+
+                <i class="fa-solid fa-gamepad"></i>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Top-Up Shop
+                </h3>
+
+                <p>
+                    Browse products
+                </p>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-right arrow"></i>
+
+        </button>
+
+
+        <button
+            class="quick-card"
+            onclick="goPayment()">
+
+            <div class="quick-icon gold">
+
+                <i class="fa-solid fa-credit-card"></i>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Payment Methods
+                </h3>
+
+                <p>
+                    View payment options
+                </p>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-right arrow"></i>
+
+        </button>
+
+
+        <button
+            class="quick-card"
+            onclick="goWhatsApp()">
+
+            <div class="quick-icon green">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    WhatsApp Support
+                </h3>
+
+                <p>
+                    Chat with us
+                </p>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-right arrow"></i>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     WHY PHOENIX
+========================================= -->
+
+<section class="benefits-section">
+
+    <div class="section-heading">
+
+        <span>
+            WHY PHOENIX
+        </span>
+
+        <h2>
+            Built For Gamers
+        </h2>
+
+        <p>
+            Everything you need for a smooth
+            and reliable top-up experience.
+        </p>
+
+    </div>
+
+
+    <div class="benefits-grid">
+
+
+        <div class="benefit-card">
+
+            <div class="benefit-icon">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+
+            <h3>
+                Fast Delivery
+            </h3>
+
+            <p>
+                Quick processing for your
+                digital purchases.
+            </p>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+            <div class="benefit-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <h3>
+                Secure Payments
+            </h3>
+
+            <p>
+                Your payment information
+                is handled securely.
+            </p>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+            <div class="benefit-icon">
+                <i class="fa-solid fa-tags"></i>
+            </div>
+
+            <h3>
+                Great Prices
+            </h3>
+
+            <p>
+                Competitive prices for
+                popular digital products.
+            </p>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+            <div class="benefit-icon">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+
+            <h3>
+                Friendly Support
+            </h3>
+
+            <p>
+                Get help whenever
+                you need it.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     REAL LEADERBOARD
+========================================= -->
+
+<section class="leaderboard-section">
+
+    <div class="section-heading">
+
+        <span>
+            PHOENIX COMMUNITY
+        </span>
+
+        <h2>
+            Top Players
+        </h2>
+
+        <p>
+            Our community leaderboard,
+            updated from real user activity.
+        </p>
+
+    </div>
+
+
+    <div
+        id="leaderboard"
+        class="leaderboard">
+
+        <div class="section-loading">
+
+            <div class="mini-spinner"></div>
+
+            <span>
+                Loading community...
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     HOT OFFERS
+========================================= -->
+
+<section class="offers-section">
+
+    <div class="section-heading">
+
+        <span>
+            PHOENIX DEALS
+        </span>
+
+        <h2>
+            Hot Offers 🔥
+        </h2>
+
+        <p>
+            Explore selected products
+            available in our store.
+        </p>
+
+    </div>
+
+
+    <div
+        id="offersContainer"
+        class="offers-grid">
+
+        <div class="section-loading">
+
+            <div class="mini-spinner"></div>
+
+            <span>
+                Loading offers...
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     PAYMENT METHODS
+========================================= -->
+
+<section
+    class="payment-section"
+    onclick="goPayment()">
+
+    <div class="payment-content">
+
+        <div class="payment-icon">
+
+            <i class="fa-solid fa-credit-card"></i>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                SECURE PAYMENTS
+            </span>
+
+            <h2>
+                Payment Methods
+            </h2>
+
+            <p>
+                View our available payment
+                options and payment instructions.
+            </p>
+
+        </div>
+
+
+        <div class="payment-arrow">
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </div>
+
+    </div>
+
+
+    <div class="payment-trust">
+
+        <span>
+            <i class="fa-solid fa-lock"></i>
+            Secure
+        </span>
+
+        <span>
+            <i class="fa-solid fa-bolt"></i>
+            Fast Processing
+        </span>
+
+        <span>
+            <i class="fa-solid fa-shield"></i>
+            Trusted
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     CUSTOMER REVIEWS
+========================================= -->
+
+<section class="reviews-section">
+
+    <div class="section-heading">
+
+        <span>
+            CUSTOMER EXPERIENCE
+        </span>
+
+        <h2>
+            What Our Customers Say
+        </h2>
+
+        <p>
+            Real reviews from Phoenix Store customers
+        </p>
+
+    </div>
+
+
+    <div class="reviews-slider-wrap">
+
+        <div
+            id="reviewsContainer"
+            class="reviews-slider">
+
+        </div>
+
+    </div>
+
+
+    <div class="reviews-view-all">
+
+        <button
+            onclick="window.location.href='Review.html'">
+
+            VIEW ALL REVIEWS
+            <span>→</span>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     COMMUNITY
+========================================= -->
+
+<section class="community-section">
+
+    <div class="community-card">
+
+        <div class="community-icon">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+        </div>
+
+
+        <div class="community-content">
+
+            <span>
+                STAY CONNECTED
+            </span>
+
+            <h2>
+                Need Help?
+            </h2>
+
+            <p>
+                Contact Phoenix Store directly
+                through WhatsApp.
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            onclick="goWhatsApp()">
+
+            Contact
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     FAQ
+========================================= -->
+
+<section class="faq-section">
+
+    <div class="section-heading">
+
+        <span>
+            HELP CENTER
+        </span>
+
+        <h2>
+            Frequently Asked Questions
+        </h2>
+
+    </div>
+
+
+    <div class="faq-list">
+
+
+        <div class="faq-item">
+
+            <button
+                class="faq-question"
+                type="button">
+
+                <span>
+                    How fast is delivery?
+                </span>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+                    Processing time depends on the
+                    product and current order volume.
+                    Our team will process your order
+                    as quickly as possible.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button
+                class="faq-question"
+                type="button">
+
+                <span>
+                    How do I place an order?
+                </span>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+                    Open the Top-Up Shop, select
+                    your product and follow the
+                    order instructions.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button
+                class="faq-question"
+                type="button">
+
+                <span>
+                    How can I contact support?
+                </span>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+                    You can contact Phoenix Store
+                    directly through our WhatsApp
+                    support.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button
+                class="faq-question"
+                type="button">
+
+                <span>
+                    Where can I see payment methods?
+                </span>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+                    Tap the Payment Methods section
+                    to open our dedicated payment
+                    information page.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     FINAL SUPPORT
+========================================= -->
+
+<section class="support-section">
+
+    <div class="support-card">
+
+        <div class="support-fire">
+            🔥
+        </div>
+
+        <span>
+            PHOENIX STORE
+        </span>
+
+        <h2>
+            We're Here To Help
+        </h2>
+
+        <p>
+            Have a question or need assistance
+            with your order?
+        </p>
+
+        <button
+            onclick="goWhatsApp()"
+            type="button">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            WhatsApp Support
+
+        </button>
+
+        <a
+  href="https://www.trustpilot.com/review/phoenix-stores.netlify.app"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="trustpilot-review-btn"
+>
+  <span>Review us on</span>
+  <strong>
+    <span class="trustpilot-star">★</span>
+    Trustpilot
+  </strong>
+</a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================================
+     BOTTOM NAV
+========================================= -->
+
+<div id="bottomNav"></div>
+
+<script src="bottom.js"></script>
+
+<script
+    type="module"
+    src="index.js">
+</script>
+
+
+<!-- =========================================
+              PWA SERVICE WORKER
+========================================= -->
+
+<script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/sw.js")
+            .then(() => {
+                console.log("Phoenix Store PWA ready");
+            })
+            .catch(error => {
+                console.error("PWA Service Worker error:", error);
+            });
+    });
+}
+</script>
+
+
+</body>
+
+</html>

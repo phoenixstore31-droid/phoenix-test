@@ -1,0 +1,759 @@
+/* =========================================
+   PHOENIX STORE — PREMIUM GAMING HISTORY
+   BLACK + RED THEME
+========================================= */
+
+html,
+body,
+*{
+    -webkit-user-select:none;
+    user-select:none;
+    -webkit-touch-callout:none;
+    box-sizing:border-box;
+}
+
+/* =========================================
+   BODY
+========================================= */
+
+body{
+
+    margin:0;
+
+    font-family:"Poppins","Segoe UI",Arial,sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 15% 0%,
+            rgba(255,0,0,.13),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(180,0,0,.10),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #050505 0%,
+            #0b0b0b 50%,
+            #050505 100%
+        );
+
+    color:#fff;
+
+    min-height:100vh;
+
+    overflow:hidden;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header{
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(20,20,20,.98),
+            rgba(8,8,8,.98)
+        );
+
+    padding:15px 18px;
+
+    border-bottom:
+        1px solid rgba(255,0,0,.45);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    color:#fff;
+
+    font-size:20px;
+
+    font-weight:800;
+
+    letter-spacing:.5px;
+
+    box-shadow:
+        0 4px 20px rgba(0,0,0,.55);
+
+    position:relative;
+
+    z-index:10;
+}
+
+/* Red glowing line */
+
+.header::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-1px;
+
+    left:10%;
+
+    width:80%;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #ff0000,
+            #ff4b4b,
+            #ff0000,
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px #ff0000;
+}
+
+/* =========================================
+   WALLET PILL
+========================================= */
+
+.wallet-pill{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:8px 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #181818,
+            #090909
+        );
+
+    border:
+        1px solid #ff1f1f;
+
+    border-radius:999px;
+
+    color:#ff3333;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    box-shadow:
+        0 0 10px rgba(255,0,0,.22),
+        inset 0 0 10px rgba(255,0,0,.05);
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.wallet-pill:hover{
+
+    transform:scale(1.04);
+
+    box-shadow:
+        0 0 18px rgba(255,0,0,.55);
+}
+
+.wallet-pill:active{
+
+    transform:scale(.97);
+}
+
+/* =========================================
+   HISTORY WRAPPER
+========================================= */
+
+.history-wrapper{
+
+    width:95%;
+
+    max-width:420px;
+
+    margin:0 auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:calc(100vh - 170px);
+
+    position:relative;
+}
+
+/* =========================================
+   TABS
+========================================= */
+
+.tabs{
+
+    display:flex;
+
+    background:
+        linear-gradient(
+            145deg,
+            #181818,
+            #0a0a0a
+        );
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    border:
+        1px solid rgba(255,0,0,.4);
+
+    margin:
+        12px 0;
+
+    flex-shrink:0;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.45);
+
+    position:relative;
+}
+
+/* Red glow underneath */
+
+.tabs::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    width:50%;
+
+    height:2px;
+
+    background:#ff0000;
+
+    box-shadow:
+        0 0 12px #ff0000;
+
+    transition:.3s;
+}
+
+.tab-btn{
+
+    flex:1;
+
+    padding:14px 8px;
+
+    border:none;
+
+    background:transparent;
+
+    color:#999;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    letter-spacing:.3px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.tab-btn:hover{
+
+    color:#fff;
+
+    background:
+        rgba(255,0,0,.07);
+}
+
+.tab-btn.active{
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff2020,
+            #a80000
+        );
+
+    color:#fff;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,.3);
+
+    box-shadow:
+        0 0 18px rgba(255,0,0,.25);
+}
+
+/* =========================================
+   HISTORY CONTENT
+========================================= */
+
+.history-content{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:2px 2px 85px;
+
+    scrollbar-width:thin;
+
+    scrollbar-color:#8b0000 #090909;
+}
+
+/* Chrome scrollbar */
+
+.history-content::-webkit-scrollbar{
+
+    width:5px;
+}
+
+.history-content::-webkit-scrollbar-track{
+
+    background:#080808;
+}
+
+.history-content::-webkit-scrollbar-thumb{
+
+    background:
+        linear-gradient(
+            #ff2222,
+            #7a0000
+        );
+
+    border-radius:10px;
+}
+
+/* =========================================
+   HISTORY PAGE
+========================================= */
+
+.history-page{
+
+    display:none;
+}
+
+.history-page.active{
+
+    display:block;
+
+    animation:
+        historyFade .25s ease;
+}
+
+@keyframes historyFade{
+
+    from{
+        opacity:0;
+        transform:translateY(5px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =========================================
+   HISTORY CARD
+========================================= */
+
+.card{
+
+    position:relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25,25,25,.98),
+            rgba(9,9,9,.98)
+        );
+
+    border-radius:15px;
+
+    padding:15px;
+
+    margin-bottom:13px;
+
+    border:
+        1px solid rgba(255,0,0,.35);
+
+    box-shadow:
+        0 7px 20px rgba(0,0,0,.55),
+        0 0 8px rgba(255,0,0,.05);
+
+    overflow:hidden;
+
+    transition:.3s;
+}
+
+/* Top red line */
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #ff0000,
+            #ff4d4d,
+            #ff0000,
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px #ff0000;
+}
+
+/* Left red gaming accent */
+
+.card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:12px;
+
+    left:0;
+
+    width:3px;
+
+    height:calc(100% - 24px);
+
+    background:
+        linear-gradient(
+            #ff0000,
+            #8b0000
+        );
+
+    border-radius:0 5px 5px 0;
+
+    box-shadow:
+        0 0 10px rgba(255,0,0,.55);
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    border-color:
+        rgba(255,0,0,.7);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.65),
+        0 0 18px rgba(255,0,0,.18);
+}
+
+/* =========================================
+   CARD TEXT
+========================================= */
+
+.card p{
+
+    margin:8px 0;
+
+    font-size:14px;
+
+    line-height:1.5;
+
+    color:#e7e7e7;
+
+    word-break:break-word;
+}
+
+/* =========================================
+   STATUS
+========================================= */
+
+.success{
+
+    color:#35e66b;
+
+    font-weight:bold;
+
+    text-shadow:
+        0 0 7px rgba(53,230,107,.35);
+}
+
+.reject{
+
+    color:#ff3030;
+
+    font-weight:bold;
+
+    text-shadow:
+        0 0 7px rgba(255,0,0,.35);
+}
+
+.pending{
+
+    color:#ffb020;
+
+    font-weight:bold;
+
+    text-shadow:
+        0 0 7px rgba(255,176,32,.3);
+}
+
+/* =========================================
+   GENERAL CARD ICON / EMOJI LOOK
+========================================= */
+
+.card p:first-child{
+
+    margin-top:2px;
+}
+
+/* =========================================
+   BOTTOM NAV
+========================================= */
+
+.bottom-nav{
+
+    position:fixed;
+
+    bottom:0;
+
+    left:0;
+
+    width:100%;
+
+    height:70px;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:center;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(18,18,18,.97),
+            rgba(5,5,5,.99)
+        );
+
+    backdrop-filter:blur(15px);
+
+    border-top:
+        1px solid rgba(255,0,0,.4);
+
+    box-shadow:
+        0 -5px 25px rgba(0,0,0,.7);
+
+    z-index:1000;
+}
+
+/* Red glowing top line */
+
+.bottom-nav::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-1px;
+
+    left:15%;
+
+    width:70%;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #ff0000,
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px #ff0000;
+}
+
+.nav-item{
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:#888;
+
+    font-size:12px;
+
+    transition:.25s;
+
+    position:relative;
+}
+
+.nav-item i{
+
+    display:block;
+
+    font-size:22px;
+
+    margin-bottom:4px;
+
+    transition:.25s;
+}
+
+.nav-item:hover{
+
+    color:#ff3333;
+}
+
+.nav-item.active{
+
+    color:#ff2020;
+
+    text-shadow:
+        0 0 8px rgba(255,0,0,.65);
+}
+
+.nav-item.active i{
+
+    filter:
+        drop-shadow(0 0 7px #ff0000);
+
+    transform:
+        translateY(-2px);
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:600px){
+
+    .header{
+
+        font-size:18px;
+
+        padding:14px 15px;
+    }
+
+    .wallet-pill{
+
+        padding:7px 12px;
+
+        font-size:13px;
+    }
+
+    .history-wrapper{
+
+        width:94%;
+
+        height:calc(100vh - 160px);
+    }
+
+    .tabs{
+
+        margin:
+            10px 0 12px;
+
+        border-radius:13px;
+    }
+
+    .tab-btn{
+
+        font-size:13px;
+
+        padding:13px 6px;
+    }
+
+    .card{
+
+        padding:14px;
+
+        border-radius:14px;
+
+        margin-bottom:12px;
+    }
+
+    .card p{
+
+        font-size:13px;
+
+        line-height:1.5;
+    }
+
+    .bottom-nav{
+
+        height:70px;
+    }
+
+    .nav-item i{
+
+        font-size:21px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media(max-width:360px){
+
+    .header{
+
+        padding:13px 12px;
+
+        font-size:17px;
+    }
+
+    .wallet-pill{
+
+        padding:6px 10px;
+
+        font-size:12px;
+    }
+
+    .tab-btn{
+
+        font-size:12px;
+
+        padding:12px 4px;
+    }
+
+    .card{
+
+        padding:12px;
+    }
+
+    .card p{
+
+        font-size:12px;
+    }
+}

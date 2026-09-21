@@ -1,0 +1,1017 @@
+/* =========================================================
+   PHOENIX TK — REGISTER PAGE
+   Complete Register CSS
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(255, 35, 25, 0.16),
+            transparent 38%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(255, 0, 0, 0.08),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #090714,
+            #050505
+        );
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.login-container {
+    width: 100%;
+    max-width: 430px;
+}
+
+
+/* =========================================================
+   REGISTER CARD
+========================================================= */
+
+.login-card {
+    width: 100%;
+
+    padding: 34px 25px 28px;
+
+    background: #101018;
+
+    border: 1px solid
+        rgba(255, 59, 47, 0.30);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 25px rgba(255, 48, 31, 0.10),
+        0 18px 50px rgba(0, 0, 0, 0.50);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Top red glow */
+
+.login-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: -100px;
+    left: 50%;
+
+    width: 220px;
+    height: 220px;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 35, 25, 0.14),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.login-header {
+    position: relative;
+
+    text-align: center;
+
+    margin-bottom: 27px;
+}
+
+.login-header h2 {
+    color: #ffffff;
+
+    font-size: 29px;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    margin-bottom: 7px;
+}
+
+.login-header p {
+    color: #999999;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.login-form {
+    width: 100%;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group {
+    width: 100%;
+
+    margin-bottom: 13px;
+}
+
+
+/* =========================================================
+   INPUT GROUP
+========================================================= */
+
+.input-group {
+    width: 100%;
+
+    height: 49px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    background: #191a23;
+
+    border: 1px solid #292a36;
+
+    border-radius: 11px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* Focus */
+
+.input-group:focus-within {
+    background: #1c1d27;
+
+    border-color:
+        rgba(255, 61, 50, 0.75);
+
+    box-shadow:
+        0 0 0 2px
+        rgba(255, 61, 50, 0.10),
+        0 0 18px
+        rgba(255, 40, 30, 0.08);
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.input-group input {
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    padding: 0 15px;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    -webkit-user-select: text;
+    user-select: text;
+}
+
+
+/* Placeholder */
+
+.input-group input::placeholder {
+    color: #777985;
+
+    opacity: 1;
+}
+
+
+/* Autofill */
+
+.input-group input:-webkit-autofill,
+.input-group input:-webkit-autofill:hover,
+.input-group input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff;
+
+    box-shadow:
+        0 0 0 1000px #191a23 inset;
+
+    transition:
+        background-color 9999s ease-in-out 0s;
+}
+
+
+/* =========================================================
+   CREATE ACCOUNT BUTTON
+========================================================= */
+
+.login-btn {
+    width: 100%;
+
+    min-height: 49px;
+
+    margin-top: 8px;
+
+    margin-bottom: 0;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3d32,
+            #d90018
+        );
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 22px
+        rgba(255, 0, 30, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Hover */
+
+.login-btn:hover {
+    transform: translateY(-2px);
+
+    filter: brightness(1.07);
+
+    box-shadow:
+        0 12px 28px
+        rgba(255, 0, 30, 0.28);
+}
+
+
+/* Active */
+
+.login-btn:active {
+    transform: scale(0.98);
+
+    box-shadow:
+        0 4px 12px
+        rgba(255, 0, 30, 0.20);
+}
+
+
+/* Disabled */
+
+.login-btn:disabled {
+    opacity: 0.60;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.success-msg {
+    display: none;
+
+    width: 100%;
+
+    margin-top: 13px;
+
+    text-align: center;
+
+    color: #36d979 !important;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.success-msg.show {
+    display: block;
+}
+
+
+/* =========================================================
+   LOGIN LINK
+========================================================= */
+
+.signup-link {
+    width: 100%;
+
+    text-align: center;
+
+    margin-top: 20px;
+}
+
+.signup-link p {
+    color: #777777;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+.signup-link a {
+    color: #ff3d32;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    margin-left: 3px;
+
+    transition:
+        color 0.2s ease;
+}
+
+.signup-link a:hover {
+    color: #ff6a60;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   PREMIUM ALERT POPUP
+========================================================= */
+
+.premium-alert-overlay {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0, 0, 0, 0.78);
+
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.premium-alert-overlay.show {
+    display: flex;
+}
+
+
+/* =========================================================
+   PREMIUM ALERT CARD
+========================================================= */
+
+.premium-alert-card {
+    width: min(360px, 92vw);
+
+    padding: 28px 22px 22px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #191a21,
+            #0e0f14
+        );
+
+    border: 1px solid
+        rgba(255, 59, 47, 0.35);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.55),
+        0 0 30px
+        rgba(255, 40, 25, 0.10);
+
+    transform: scale(0.85);
+
+    opacity: 0;
+
+    animation:
+        premiumAlertIn
+        0.25s
+        ease forwards;
+}
+
+
+/* =========================================================
+   ALERT ICON
+========================================================= */
+
+.premium-alert-icon {
+    width: 58px;
+
+    height: 58px;
+
+    margin: 0 auto 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3d32,
+            #d90018
+        );
+
+    color: #ffffff;
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 25px
+        rgba(255, 30, 20, 0.25);
+}
+
+
+/* =========================================================
+   ALERT TITLE
+========================================================= */
+
+.premium-alert-card h3 {
+    margin: 0 0 9px;
+
+    color: #ffffff;
+
+    font-size: 19px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   ALERT MESSAGE
+========================================================= */
+
+.premium-alert-card p {
+    margin: 0 auto 21px;
+
+    max-width: 290px;
+
+    color: #999999;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   ALERT BUTTON
+========================================================= */
+
+.premium-alert-btn {
+    width: 100%;
+
+    min-height: 45px;
+
+    padding: 12px 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3d32,
+            #d90018
+        );
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px
+        rgba(255, 30, 20, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+.premium-alert-btn:hover {
+    transform: translateY(-2px);
+
+    filter: brightness(1.07);
+}
+
+.premium-alert-btn:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================================
+   POPUP ANIMATION
+========================================================= */
+
+@keyframes premiumAlertIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.85)
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   OTP POPUP
+========================================================= */
+
+#otpPopup {
+    z-index: 100000;
+
+    background:
+        rgba(0, 0, 0, 0.78) !important;
+
+    backdrop-filter: blur(8px);
+
+    -webkit-backdrop-filter: blur(8px);
+}
+
+
+/* OTP CARD */
+
+#otpPopup > div {
+    width: min(350px, 90vw) !important;
+
+    padding: 27px 22px !important;
+
+    border-radius: 20px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            #191a21,
+            #0e0f14
+        ) !important;
+
+    border:
+        1px solid
+        rgba(255, 59, 47, 0.30);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.55),
+        0 0 25px
+        rgba(255, 40, 25, 0.10);
+
+    color: #ffffff;
+}
+
+
+/* OTP TITLE */
+
+#otpPopup h3 {
+    color: #ffffff;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    margin-bottom: 8px;
+}
+
+
+/* OTP TEXT */
+
+#otpPopup p {
+    color: #999999;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* OTP INPUT */
+
+#otpPopup #otpInput {
+    width: 100% !important;
+
+    height: 48px;
+
+    margin-top: 10px;
+
+    padding: 10px 15px !important;
+
+    border:
+        1px solid #292a36 !important;
+
+    border-radius: 10px !important;
+
+    background: #191a23 !important;
+
+    color: #ffffff !important;
+
+    outline: none;
+
+    font-size: 18px !important;
+
+    letter-spacing: 5px;
+
+    text-align: center;
+}
+
+#otpPopup #otpInput:focus {
+    border-color:
+        rgba(255, 61, 50, 0.75) !important;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(255, 61, 50, 0.10);
+}
+
+
+/* OTP BUTTONS */
+
+#otpPopup .neu-button {
+    width: 100%;
+
+    min-height: 45px;
+
+    margin: 0 0 10px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3d32,
+            #d90018
+        );
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px
+        rgba(255, 30, 20, 0.18);
+}
+
+#otpPopup .neu-button:disabled {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+
+    box-shadow: none;
+}
+
+
+/* OTP TIMER */
+
+#otpPopup #otpTimer {
+    color: #ff4b4b !important;
+
+    font-size: 12px;
+
+    margin: 5px 0 10px;
+}
+
+
+/* =========================================================
+   REMOVE OLD NEUMORPHISM CLASSES IF PRESENT
+========================================================= */
+
+.neu-icon,
+.icon-inner,
+.neu-input,
+.neu-toggle,
+.neu-checkbox,
+.neu-social,
+.divider,
+.form-options,
+.social-login,
+.error-message,
+.success-message {
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 14px;
+    }
+
+    .login-container {
+        max-width: 430px;
+    }
+
+    .login-card {
+        padding:
+            29px 20px 24px;
+
+        border-radius: 18px;
+    }
+
+    .login-header {
+        margin-bottom: 23px;
+    }
+
+    .login-header h2 {
+        font-size: 25px;
+    }
+
+    .login-header p {
+        font-size: 12px;
+    }
+
+    .input-group {
+        height: 46px;
+    }
+
+    .input-group input {
+        font-size: 13px;
+
+        padding:
+            0 13px;
+    }
+
+    .login-btn {
+        min-height: 46px;
+
+        font-size: 13px;
+    }
+
+    .signup-link {
+        margin-top: 17px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 360px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .login-card {
+        padding:
+            25px 17px 21px;
+
+        border-radius: 16px;
+    }
+
+    .login-header h2 {
+        font-size: 23px;
+    }
+
+    .login-header p {
+        font-size: 11px;
+    }
+
+    .input-group {
+        height: 44px;
+
+        border-radius: 9px;
+    }
+
+    .input-group input {
+        font-size: 12px;
+    }
+
+    .login-btn {
+        min-height: 44px;
+
+        font-size: 12px;
+    }
+
+    .signup-link p,
+    .signup-link a {
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+:focus-visible {
+    outline:
+        2px solid #ff3d32;
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+    }
+
+}
+
+/* Fix Register Input Labels */
+
+.input-group {
+    position: relative;
+}
+
+.input-group input {
+    padding: 0 15px !important;
+}
+
+.input-group label {
+    position: absolute;
+
+    left: 15px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #777985;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    pointer-events: none;
+
+    transition: all 0.2s ease;
+}
+
+/* Floating label */
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: 7px;
+
+    left: 12px;
+
+    transform: translateY(0);
+
+    font-size: 10px;
+
+    color: #ff4b42;
+
+    background: #191a23;
+
+    padding: 0 4px;
+}
+
+/* Hide input label when typing */
+
+.input-group input:focus + label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-50%);
+}
+
+/* Also hide label when input has text */
+
+.input-group input:not(:placeholder-shown) + label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-50%);
+}

@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,
+initial-scale=1.0,
+maximum-scale=1.0,
+user-scalable=no">
+
+<title>Phoenix Profile</title>
+
+<link rel="icon" href="../image/default-avatar.jpg">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="profile.css">
+<link rel="stylesheet" href="bottom.css">
+
+</head>
+
+<body>
+
+<!-- ===========================
+PROFILE HEADER
+=========================== -->
+
+<header class="profile-header">
+
+<div class="banner">
+
+<img
+src="../image/phoenix-banner.jpg"
+alt="Phoenix Banner">
+
+<div class="banner-overlay"></div>
+
+</div>
+
+<div class="profile-main">
+
+<div class="profile-left">
+
+<div class="avatar-box">
+
+<img
+id="profileAvatar"
+src="../image/default-avatar.jpg"
+alt="Profile">
+
+<input
+type="file"
+id="avatarInput"
+accept="image/*"
+hidden>
+
+<button
+id="avatarBtn"
+class="avatar-edit">
+
+<i class="fa-solid fa-camera"></i>
+
+</button>
+
+</div>
+
+<div class="profile-info">
+
+<h1 id="profileName">
+
+Loading...
+
+</h1>
+
+<div class="verify-row">
+
+<span
+class="verify-badge">
+
+<i class="fa-solid fa-circle-check"></i>
+
+Verified
+
+</span>
+
+</div>
+
+<p id="profileEmail">
+
+Loading...
+
+</p>
+
+<p id="memberSince">
+
+Loading...
+
+</p>
+
+</div>
+
+<div id="adminDashboardSection" style="display:none;">
+
+    <button
+        id="adminDashboardBtn"
+        type="button">
+
+        <i class="fa-solid fa-shield-halved"></i>
+        Admin Dashboard
+        <i class="fa-solid fa-arrow-right"></i>
+
+    </button>
+
+</div>
+
+</div>
+
+
+</header>
+
+<!-- ===========================
+PROFILE STATS
+=========================== -->
+
+<main class="profile-container">
+
+<div class="stats-grid">
+
+<div class="stat-card red">
+
+<div class="stat-icon">
+<i class="fa-solid fa-bag-shopping"></i>
+</div>
+
+<div class="stat-content">
+
+<h4>Total Orders</h4>
+
+<h2 id="totalOrders">
+0
+</h2>
+
+<p>
+View all orders
+</p>
+
+</div>
+
+<i class="fa-solid fa-arrow-right stat-arrow"></i>
+
+</div>
+
+<div class="stat-card blue">
+
+<div class="stat-icon">
+<i class="fa-solid fa-gem"></i>
+</div>
+
+<div class="stat-content">
+
+<h4>Total Spent</h4>
+
+<h2 id="totalSpent">
+
+Rs. 0.00
+
+</h2>
+
+<p>
+
+All time spending
+
+</p>
+
+</div>
+
+<i class="fa-solid fa-arrow-right stat-arrow"></i>
+
+</div>
+
+<div class="stat-card green">
+
+<div class="stat-icon">
+<i class="fa-solid fa-wallet"></i>
+</div>
+
+<div class="stat-content">
+
+<h4>Wallet Balance</h4>
+
+<h2 id="walletBalance">
+
+Rs. 0.00
+
+</h2>
+
+<p>
+
+Available Balance
+
+</p>
+
+</div>
+
+<i class="fa-solid fa-arrow-right stat-arrow"></i>
+
+</div>
+
+<div class="stat-card orange" id="rewardCard"
+onclick="openRewardRedeem()"
+style="cursor:pointer;">
+
+<div class="stat-icon">
+<i class="fa-solid fa-star"></i>
+</div>
+
+<div class="stat-content">
+
+<h4>Phoenix Points</h4>
+
+<h2 id="rewardPoints">
+0
+</h2>
+
+<p>
+Tap to Redeem 🎁
+</p>
+
+</div>
+
+<i class="fa-solid fa-arrow-right stat-arrow"></i>
+
+</div>
+
+</div>
+
+<!-- ===========================
+ACCOUNT + RECENT ACTIVITY
+=========================== -->
+
+<div class="content-grid">
+
+<!-- Account Details -->
+
+<section class="glass-card">
+
+<div class="card-title">
+
+<i class="fa-regular fa-user"></i>
+
+<h2>Account Details</h2>
+
+</div>
+
+<div class="account-list">
+
+<div class="account-row">
+
+<span>Username</span>
+
+<strong id="detailUsername">
+
+Loading...
+
+</strong>
+
+</div>
+
+<div class="account-row">
+
+<span>Email</span>
+
+<strong id="detailEmail">
+
+Loading...
+
+</strong>
+
+</div>
+
+<div class="account-row">
+
+<span>Member Since</span>
+
+<strong id="detailMember">
+
+Loading...
+
+</strong>
+
+</div>
+
+<div class="account-row">
+
+<span>Account Status</span>
+
+<strong class="status-active">
+
+Verified
+
+</strong>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Recent Activity -->
+
+<section class="glass-card">
+
+<div class="card-title">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+<h2>Recent Activity</h2>
+
+</div>
+
+<div
+id="recentActivity"
+class="activity-list">
+
+<div class="activity-empty">
+
+<i class="fa-solid fa-box-open"></i>
+
+<p>
+
+No recent orders
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<!-- ===========================
+PHOENIX RESELLER
+=========================== -->
+
+<section class="elite-card reseller-card">
+
+    <div class="soon-badge">
+        RESELLER
+    </div>
+
+    <div class="elite-left">
+
+        <div class="elite-icon">
+
+            <i class="fa-solid fa-handshake"></i>
+
+        </div>
+
+        <div>
+
+            <h2>Become a Phoenix Reseller</h2>
+
+            <p>
+                Earn money by selling Diamonds, Memberships and Game Top-Ups.
+                Apply now to become an official Phoenix Store reseller.
+            </p>
+
+        </div>
+
+    </div>
+
+    <button
+        class="elite-btn"
+        onclick="location.href='reseller-apply.html'">
+
+        <i class="fa-solid fa-paper-plane"></i>
+        &nbsp; Apply Now
+
+    </button>
+
+</section>
+
+<!-- ===========================
+LOGOUT
+=========================== -->
+
+<div class="logout-area">
+
+<button
+id="logoutBtn"
+class="logout-btn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</button>
+
+</div>
+
+<!-- ===========================
+REWARD POINTS REDEEM
+=========================== -->
+
+<div id="rewardRedeemPopup" class="reward-popup">
+
+    <div class="reward-box">
+
+        <button
+            class="reward-close"
+            onclick="closeRewardRedeem()">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+        <div class="reward-title">
+
+            <div class="reward-title-icon">
+                🎁
+            </div>
+
+            <div>
+                <h2>PHOENIX POINTS REDEEM</h2>
+
+                <p>
+                    Use your Phoenix Points
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="my-reward-points">
+
+            <span>
+                ⭐ Your Points
+            </span>
+
+            <strong id="redeemCurrentPoints">
+                0 Points
+            </strong>
+
+        </div>
+
+
+        <div class="reward-list">
+
+
+            <!-- Lite Weekly -->
+
+            <div class="reward-item">
+
+                <div class="reward-info">
+
+                    <h3>🎁 Lite Weekly</h3>
+
+                    <p>
+                        250 Points
+                    </p>
+
+                </div>
+
+                <button
+                    class="redeem-btn"
+                    data-points="250"
+                    data-reward="Lite Weekly">
+
+                    Redeem
+
+                </button>
+
+            </div>
+
+
+            <!-- Weekly -->
+
+            <div class="reward-item">
+
+                <div class="reward-info">
+
+                    <h3>🎁 Weekly</h3>
+
+                    <p>
+                        1,200 Points
+                    </p>
+
+                </div>
+
+                <button
+                    class="redeem-btn"
+                    data-points="1200"
+                    data-reward="Weekly">
+
+                    Redeem
+
+                </button>
+
+            </div>
+
+
+            <!-- Monthly -->
+
+            <div class="reward-item">
+
+                <div class="reward-info">
+
+                    <h3>🎁 Monthly</h3>
+
+                    <p>
+                        6,000 Points
+                    </p>
+
+                </div>
+
+                <button
+                    class="redeem-btn"
+                    data-points="6000"
+                    data-reward="Monthly">
+
+                    Redeem
+
+                </button>
+
+            </div>
+
+
+            <!-- VIP -->
+
+            <div class="reward-item">
+
+                <div class="reward-info">
+
+                    <h3>🎁 VIP</h3>
+
+                    <p>
+                        7,200 Points
+                    </p>
+
+                </div>
+
+                <button
+                    class="redeem-btn"
+                    data-points="7200"
+                    data-reward="VIP">
+
+                    Redeem
+
+                </button>
+
+            </div>
+
+
+            <!-- S VIP -->
+
+            <div class="reward-item">
+
+                <div class="reward-info">
+
+                    <h3>🎁 S VIP</h3>
+
+                    <p>
+                        10,800 Points
+                    </p>
+
+                </div>
+
+                <button
+                    class="redeem-btn"
+                    data-points="10800"
+                    data-reward="S VIP">
+
+                    Redeem
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+REWARD CONTACT POPUP
+=========================== -->
+
+<div id="rewardContactPopup" class="reward-contact-popup">
+
+    <div class="reward-contact-box">
+
+        <button
+            id="closeRewardContact"
+            class="reward-contact-close">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="reward-contact-icon">
+            <i class="fa-brands fa-whatsapp"></i>
+        </div>
+
+
+        <h2>Reward Redeem</h2>
+
+        <p>
+            You selected
+            <strong id="selectedRewardName">
+                Reward
+            </strong>
+        </p>
+
+
+        <div class="reward-contact-info">
+
+            <span>
+                🎁 Required Points
+            </span>
+
+            <strong id="selectedRewardPoints">
+                0 Points
+            </strong>
+
+        </div>
+
+
+        <p class="reward-contact-message">
+
+            To redeem this reward,
+            please contact Phoenix Store
+            on WhatsApp.
+
+        </p>
+
+
+        <a
+            id="rewardWhatsappBtn"
+            class="reward-whatsapp-btn"
+            href="#"
+            target="_blank">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            Contact on WhatsApp
+
+        </a>
+
+
+        <button
+            id="cancelRewardContact"
+            class="reward-cancel-btn">
+
+            Cancel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</main>
+
+<!-- Toast -->
+
+<div id="toast"></div>
+
+<!-- =====================================
+PHOTO UPLOAD LOADER
+===================================== -->
+
+<div id="photoOverlay" class="photo-overlay">
+
+    <div class="photo-popup">
+
+        <div class="photo-circle">
+
+            <svg class="progress-svg" viewBox="0 0 160 160">
+
+                <circle
+                    class="progress-bg"
+                    cx="80"
+                    cy="80"
+                    r="70">
+                </circle>
+
+                <circle
+                    id="progressCircle"
+                    class="progress-bar"
+                    cx="80"
+                    cy="80"
+                    r="70">
+                </circle>
+
+            </svg>
+
+            <img
+                id="previewPhoto"
+                src=""
+                alt="Preview">
+
+            <div
+                id="uploadSuccess"
+                class="upload-success">
+
+                <i class="fa-solid fa-check"></i>
+
+            </div>
+
+        </div>
+
+        <h3 id="uploadTitle">
+
+            Updating Profile Photo...
+
+        </h3>
+
+        <p id="uploadSub">
+
+            Please wait a moment
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- ==========================
+LOGOUT POPUP
+========================== -->
+
+<div id="logoutPopup" class="logout-popup">
+
+    <div class="logout-box">
+
+        <div class="logout-icon">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+
+        <h2>Logout</h2>
+
+        <p>
+            Are you sure you want to logout from your account?
+        </p>
+
+        <div class="logout-actions">
+
+            <button id="cancelLogout" class="cancel-btn">
+                Cancel
+            </button>
+
+            <button id="confirmLogout" class="confirm-btn">
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="bottomNav"></div>
+
+<script src="bottom.js"></script>
+<script type="module" src="profile.js"></script>
+
+</body>
+</html>
