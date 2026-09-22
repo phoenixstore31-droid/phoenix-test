@@ -1,11 +1,14 @@
 import { createClient } from
 "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
+
 const supabaseUrl =
 "https://tvhgxlqqeklrdlgbkosa.supabase.co";
 
+
 const supabaseKey =
 "sb_publishable_Ep28HPF1SXIXQXBF2i__eg_h_jmjw4I";
+
 
 const supabase =
 createClient(
@@ -20,6 +23,7 @@ detectSessionInUrl: true
 }
 );
 
+
 /* =========================================
 ELEMENTS
 ========================================= */
@@ -27,14 +31,18 @@ ELEMENTS
 const topupBox =
 document.getElementById("topupHistory");
 
+
 const walletBox =
 document.getElementById("walletHistory");
+
 
 const topupTab =
 document.getElementById("topupTab");
 
+
 const walletTab =
 document.getElementById("walletTab");
+
 
 /* =========================================
 ESCAPE HTML
@@ -51,6 +59,7 @@ return String(value ?? "")
 
 }
 
+
 /* =========================================
 STATUS CLASS
 ========================================= */
@@ -61,6 +70,7 @@ const value =
 String(status || "")
 .toLowerCase();
 
+
 if (
 value === "success" ||
 value === "completed" ||
@@ -70,6 +80,7 @@ value === "complete"
 return "success";
 
 }
+
 
 if (
 value === "reject" ||
@@ -82,9 +93,11 @@ return "reject";
 
 }
 
+
 return "pending";
 
 }
+
 
 /* =========================================
 FORMAT PRICE
@@ -96,6 +109,7 @@ return Number(price || 0)
 .toFixed(2);
 
 }
+
 
 /* =========================================
 FORMAT DATE
@@ -109,14 +123,17 @@ return "";
 
 }
 
+
 const d =
 new Date(date);
+
 
 if (Number.isNaN(d.getTime())) {
 
 return "";
 
 }
+
 
 return d.toLocaleString(
 "en-US",
@@ -131,6 +148,274 @@ minute: "2-digit"
 
 }
 
+
+/* =========================================
+COPY ORDER DETAILS
+========================================= */
+
+async function copyOrderDetails(button) {
+
+const orderId =
+button.dataset.orderId || "";
+
+const uid =
+button.dataset.uid || "";
+
+const playerId =
+button.dataset.playerId || "";
+
+const product =
+button.dataset.product || "";
+
+const packageName =
+button.dataset.package || "";
+
+const name =
+button.dataset.name || "";
+
+const category =
+button.dataset.category || "";
+
+const price =
+button.dataset.price || "";
+
+const status =
+button.dataset.status || "";
+
+const type =
+button.dataset.type || "";
+
+
+let copyText = "";
+
+
+/* =====================================
+   NORMAL FREE FIRE / NORMAL PRODUCT
+===================================== */
+
+if (type === "normal") {
+
+  if (name) {
+
+    copyText +=
+      `Name: ${name}\n`;
+
+  } else {
+
+    copyText +=
+      `Category: ${category}\n`;
+
+  }
+
+  if (uid) {
+
+    copyText +=
+      `UID: ${uid}\n`;
+
+  }
+
+  if (product) {
+
+    copyText +=
+      `Product: ${product}\n`;
+
+  }
+
+  copyText +=
+    `Price: Rs. ${price}\n`;
+
+  copyText +=
+    `Order ID: ${orderId}\n`;
+
+  copyText +=
+    `Status: ${status}`;
+
+}
+
+
+/* =====================================
+GARENA SHELL
+===================================== */
+
+else if (type === "garena") {
+
+copyText +=
+`Order ID: ${orderId}\n`;
+
+copyText +=
+`Product: ${product}\n`;
+
+copyText +=
+`Category: ${category}\n`;
+
+copyText +=
+`Price: Rs. ${price}\n`;
+
+copyText +=
+`Status: ${status}`;
+
+}
+
+
+/* =====================================
+COD MOBILE
+===================================== */
+
+else if (type === "cod_mobile") {
+
+copyText +=
+`Order ID: ${orderId}\n`;
+
+copyText +=
+`Player ID: ${playerId}\n`;
+
+copyText +=
+`Package: ${packageName}\n`;
+
+copyText +=
+`Category: ${category}\n`;
+
+copyText +=
+`Price: Rs. ${price}\n`;
+
+copyText +=
+`Status: ${status}`;
+
+}
+
+
+/* =====================================
+DELTA FORCE
+===================================== */
+
+else if (type === "delta_force") {
+
+copyText +=
+`Order ID: ${orderId}\n`;
+
+copyText +=
+`Player ID: ${playerId}\n`;
+
+copyText +=
+`Package: ${packageName}\n`;
+
+copyText +=
+`Category: ${category}\n`;
+
+copyText +=
+`Price: Rs. ${price}\n`;
+
+copyText +=
+`Status: ${status}`;
+
+}
+
+
+try {
+
+await navigator.clipboard.writeText(
+copyText
+);
+
+
+const originalHTML =
+button.innerHTML;
+
+
+button.innerHTML =
+`<i class="fas fa-check"></i> Copied`;
+
+
+button.style.transform =
+"scale(0.96)";
+
+
+setTimeout(() => {
+
+button.innerHTML =
+originalHTML;
+
+button.style.transform =
+"scale(1)";
+
+}, 1500);
+
+
+}
+catch(error) {
+
+console.error(
+"Copy Error:",
+error
+);
+
+
+const textarea =
+document.createElement("textarea");
+
+
+textarea.value =
+copyText;
+
+
+textarea.style.position =
+"fixed";
+
+textarea.style.opacity =
+"0";
+
+
+document.body.appendChild(
+textarea
+);
+
+
+textarea.select();
+
+
+try {
+
+document.execCommand(
+"copy"
+);
+
+
+const originalHTML =
+button.innerHTML;
+
+
+button.innerHTML =
+`<i class="fas fa-check"></i> Copied`;
+
+
+setTimeout(() => {
+
+button.innerHTML =
+originalHTML;
+
+}, 1500);
+
+
+}
+catch(copyError) {
+
+console.error(
+"Fallback Copy Error:",
+copyError
+);
+
+}
+
+
+document.body.removeChild(
+textarea
+);
+
+}
+
+}
+
+
 /* =========================================
 AUTH
 ========================================= */
@@ -142,10 +427,12 @@ session
 } =
 await supabase.auth.getSession();
 
+
 if (!session) {
 
 window.location.href =
 "login.html";
+
 
 throw new Error(
 "No active session"
@@ -153,11 +440,13 @@ throw new Error(
 
 }
 
+
 /* =========================================
 MAINTENANCE CHECK
 ========================================= */
 
 let isAdmin = false;
+
 
 const {
 data: admin
@@ -171,11 +460,13 @@ session.user.id
 )
 .maybeSingle();
 
+
 if (admin) {
 
 isAdmin = true;
 
 }
+
 
 const {
 data: settings
@@ -186,6 +477,7 @@ await supabase
 .eq("id", 1)
 .single();
 
+
 if (
 settings?.maintenance === true &&
 !isAdmin
@@ -195,11 +487,13 @@ window.location.replace(
 "maintenance.html"
 );
 
+
 throw new Error(
 "Maintenance mode active"
 );
 
 }
+
 
 /* =========================================
 LIVE WALLET BALANCE
@@ -218,12 +512,14 @@ session.user.id
 )
 .single();
 
+
 if (!profileError) {
 
 const liveBalance =
 document.getElementById(
 "liveBalance"
 );
+
 
 if (liveBalance) {
 
@@ -236,6 +532,7 @@ profile.wallet_balance || 0
 
 }
 
+
 /* =========================================
 LOAD ALL TOP-UP HISTORY
 ========================================= */
@@ -243,10 +540,15 @@ LOAD ALL TOP-UP HISTORY
 async function loadTopupHistory() {
 
 topupBox.innerHTML = `
+
 <div class="card" style="text-align:center;">
+
 Loading history...
+
 </div>
+
 `;
+
 
 try {
 
@@ -272,11 +574,13 @@ ascending: false
 }
 );
 
+
 if (normalError) {
 
 throw normalError;
 
 }
+
 
 /* =====================================
 GARENA SHELL ORDERS
@@ -300,11 +604,13 @@ ascending: false
 }
 );
 
+
 if (garenaError) {
 
 throw garenaError;
 
 }
+
 
 /* =====================================
 COD MOBILE ORDERS
@@ -328,11 +634,13 @@ ascending: false
 }
 );
 
+
 if (codError) {
 
 throw codError;
 
 }
+
 
 /* =====================================
 DELTA FORCE ORDERS
@@ -356,11 +664,13 @@ ascending: false
 }
 );
 
+
 if (deltaError) {
 
 throw deltaError;
 
 }
+
 
 /* =====================================
 CONVERT NORMAL ORDERS
@@ -374,24 +684,24 @@ const orderStatus =
 String(data.status || "")
 .toLowerCase();
 
+
 const isSuccessful =
 orderStatus === "success" ||
 orderStatus === "completed" ||
 orderStatus === "complete";
 
-/*
-FREE FIRE CHECK
 
-Free Fire orders use the normal orders table.
-Only show provider nickname when:
-1. Order is successful
-2. provider_nickname exists
-3. It is a Free Fire order
-*/
+const productName =
+String(
+data.product_name || ""
+).toLowerCase();
+
 
 const isFreeFire =
-String(data.category || "")
-.toLowerCase().includes("free fire");
+productName.includes("membership") ||
+productName.includes("diamonds") ||
+productName.includes("level up pass");
+
 
 return {
 
@@ -426,7 +736,9 @@ data.price ??
 ),
 
 quantity:
-Number(data.quantity || 1),
+Number(
+data.quantity || 1
+),
 
 status:
 data.status,
@@ -440,6 +752,7 @@ data.created_at
 
 );
 
+
 /* =====================================
 CONVERT GARENA ORDERS
 ===================================== */
@@ -452,6 +765,7 @@ const shellAmount =
 Number(
 data.shell_amount || 0
 );
+
 
 return {
 
@@ -490,6 +804,7 @@ data.created_at
 }
 
 );
+
 
 /* =====================================
 CONVERT COD MOBILE ORDERS
@@ -540,6 +855,7 @@ data.created_at
 
 );
 
+
 /* =====================================
 CONVERT DELTA FORCE ORDERS
 ===================================== */
@@ -589,6 +905,7 @@ data.created_at
 
 );
 
+
 /* =====================================
 MERGE ALL HISTORY
 ===================================== */
@@ -601,6 +918,7 @@ const allHistory = [
 ...deltaHistory
 
 ];
+
 
 /* =====================================
 SORT LATEST FIRST
@@ -617,6 +935,7 @@ new Date(a.createdAt)
 }
 
 );
+
 
 /* =====================================
 EMPTY
@@ -656,11 +975,13 @@ return;
 
 }
 
+
 /* =====================================
 RENDER
 ===================================== */
 
 let html = "";
+
 
 allHistory.forEach(
 data => {
@@ -670,10 +991,89 @@ getStatusClass(
 data.status
 );
 
+
 const quantityText =
 data.quantity > 1
 ? ` × ${data.quantity}`
 : "";
+
+
+/* =====================================
+DISPLAY NAME / CATEGORY
+===================================== */
+
+let categoryDisplay =
+data.category;
+
+
+let showName = false;
+
+
+if (
+data.isFreeFire &&
+data.isSuccessful &&
+data.providerNickname
+) {
+
+categoryDisplay =
+data.providerNickname;
+
+showName = true;
+
+}
+
+
+/* =====================================
+COPY BUTTON DATA
+===================================== */
+
+const safeOrderId =
+escapeHTML(
+data.orderId
+);
+
+const safeUid =
+escapeHTML(
+data.uid
+);
+
+const safePlayerId =
+escapeHTML(
+data.playerId
+);
+
+const safeProduct =
+escapeHTML(
+data.product
+);
+
+const safePackage =
+escapeHTML(
+data.product
+);
+
+const safeName =
+escapeHTML(
+showName
+? data.providerNickname
+: ""
+);
+
+const safeCategory =
+escapeHTML(
+data.category
+);
+
+const safePrice =
+escapeHTML(
+formatPrice(data.price)
+);
+
+const safeStatus =
+escapeHTML(
+data.status
+);
+
 
 /* =============================
 GARENA SHELL
@@ -685,7 +1085,45 @@ data.type === "garena"
 
 html += `
 
-<div class="card">
+<div
+class="card"
+style="position:relative;"
+>
+
+<button
+type="button"
+class="copy-order-btn"
+title="Copy Order Details"
+data-type="garena"
+data-order-id="${safeOrderId}"
+data-product="${safeProduct}"
+data-category="${safeCategory}"
+data-price="${safePrice}"
+data-status="${safeStatus}"
+onclick="copyOrderDetails(this)"
+style="
+position:absolute;
+top:12px;
+right:12px;
+display:flex;
+align-items:center;
+gap:6px;
+padding:7px 11px;
+border:1px solid rgba(255,255,255,0.12);
+border-radius:10px;
+background:rgba(255,255,255,0.06);
+color:#fff;
+font-size:12px;
+font-weight:600;
+cursor:pointer;
+backdrop-filter:blur(10px);
+-webkit-backdrop-filter:blur(10px);
+transition:all .2s ease;
+"
+>
+<i class="fas fa-copy"></i>
+Copy
+</button>
 
 <p>
 🔔 Order ID :
@@ -735,6 +1173,7 @@ return;
 
 }
 
+
 /* =============================
 COD MOBILE
 ============================= */
@@ -745,7 +1184,46 @@ data.type === "cod_mobile"
 
 html += `
 
-<div class="card">
+<div
+class="card"
+style="position:relative;"
+>
+
+<button
+type="button"
+class="copy-order-btn"
+title="Copy Order Details"
+data-type="cod_mobile"
+data-order-id="${safeOrderId}"
+data-player-id="${safePlayerId}"
+data-package="${safePackage}"
+data-category="${safeCategory}"
+data-price="${safePrice}"
+data-status="${safeStatus}"
+onclick="copyOrderDetails(this)"
+style="
+position:absolute;
+top:12px;
+right:12px;
+display:flex;
+align-items:center;
+gap:6px;
+padding:7px 11px;
+border:1px solid rgba(255,255,255,0.12);
+border-radius:10px;
+background:rgba(255,255,255,0.06);
+color:#fff;
+font-size:12px;
+font-weight:600;
+cursor:pointer;
+backdrop-filter:blur(10px);
+-webkit-backdrop-filter:blur(10px);
+transition:all .2s ease;
+"
+>
+<i class="fas fa-copy"></i>
+Copy
+</button>
 
 <p>
 🔔 Order ID :
@@ -802,15 +1280,57 @@ return;
 
 }
 
+
 /* =====================================
 DELTA FORCE
 ===================================== */
 
-if (data.type === "delta_force") {
+if (
+data.type === "delta_force"
+) {
 
 html += `
 
-<div class="card">
+<div
+class="card"
+style="position:relative;"
+>
+
+<button
+type="button"
+class="copy-order-btn"
+title="Copy Order Details"
+data-type="delta_force"
+data-order-id="${safeOrderId}"
+data-player-id="${safePlayerId}"
+data-package="${safePackage}"
+data-category="${safeCategory}"
+data-price="${safePrice}"
+data-status="${safeStatus}"
+onclick="copyOrderDetails(this)"
+style="
+position:absolute;
+top:12px;
+right:12px;
+display:flex;
+align-items:center;
+gap:6px;
+padding:7px 11px;
+border:1px solid rgba(255,255,255,0.12);
+border-radius:10px;
+background:rgba(255,255,255,0.06);
+color:#fff;
+font-size:12px;
+font-weight:600;
+cursor:pointer;
+backdrop-filter:blur(10px);
+-webkit-backdrop-filter:blur(10px);
+transition:all .2s ease;
+"
+>
+<i class="fas fa-copy"></i>
+Copy
+</button>
 
 <p>
 🔔 Order ID :
@@ -865,87 +1385,150 @@ return;
 
 }
 
+
 /* =============================
 NORMAL PRODUCT
 ============================= */
 
-/*
-FREE FIRE SUCCESS:
-Show provider nickname instead of Category.
-
-FREE FIRE REJECTED:
-Show normal Category.
-
-OTHER PRODUCTS:
-Show normal Category.
-*/
-
-let categoryDisplay =
-data.category;
-
-if (
-data.isFreeFire &&
-data.isSuccessful &&
-data.providerNickname
-) {
-
-categoryDisplay =
-data.providerNickname;
-
-}
-
 html += `
 
-<div class="card">
+<div
+class="card"
+style="position:relative;"
+>
+
+<button
+type="button"
+class="copy-order-btn"
+title="Copy Order Details"
+data-type="normal"
+data-order-id="${safeOrderId}"
+data-uid="${safeUid}"
+data-product="${safeProduct}"
+data-name="${safeName}"
+data-category="${safeCategory}"
+data-price="${safePrice}"
+data-status="${safeStatus}"
+onclick="copyOrderDetails(this)"
+style="
+position:absolute;
+top:12px;
+right:12px;
+display:flex;
+align-items:center;
+gap:6px;
+padding:7px 11px;
+border:1px solid rgba(255,255,255,0.12);
+border-radius:10px;
+background:rgba(255,255,255,0.06);
+color:#fff;
+font-size:12px;
+font-weight:600;
+cursor:pointer;
+backdrop-filter:blur(10px);
+-webkit-backdrop-filter:blur(10px);
+transition:all .2s ease;
+"
+>
+<i class="fas fa-copy"></i>
+Copy
+</button>
 
 <p>
-🔔 Order ID :
-${escapeHTML(
-data.orderId
-)}
-</p>
 
-<p>
-🎮 UID :
-${escapeHTML(
-data.uid
-)}
-</p>
+${
 
-<p>
-💎 Product :
-${escapeHTML(
-data.product
-)}
-</p>
+showName
 
-<p>
-📂 Category :
+? "👤 Name"
+
+: "📂 Category"
+
+} :
+
 ${escapeHTML(
+
 categoryDisplay
+
 )}
+
 </p>
 
+
 <p>
-💵 Price :
+
+🎮 UID :
+
+${escapeHTML(
+
+data.uid
+
+)}
+
+</p>
+
+
+<p>
+
+💎 Product :
+
+${escapeHTML(
+
+data.product
+
+)}
+
+</p>
+
+
+<p>
+
+💰 Price :
+
 Rs.
+
 ${formatPrice(
+
 data.price
+
 )}
 
 ${quantityText}
 
 </p>
 
+
 <p>
-📌 Status :
-<span
-class="${statusClass}"
->
+
+🧾 Order ID :
+
 ${escapeHTML(
-data.status
+
+data.orderId
+
 )}
+
+</p>
+
+
+<p>
+
+📌 Status :
+
+<span
+
+class="${statusClass}"
+
+>
+
+${escapeHTML(
+
+data.status
+
+)}
+
 </span>
+
 </p>
 
 </div>
@@ -954,6 +1537,7 @@ data.status
 
 }
 
+
 );
 
 topupBox.innerHTML =
@@ -961,12 +1545,14 @@ html;
 
 }
 
+
 catch(error) {
 
 console.error(
 "History Load Error:",
 error
 );
+
 
 topupBox.innerHTML = `
 
@@ -999,6 +1585,7 @@ Please try again later.
 
 }
 
+
 /* =========================================
 WALLET HISTORY
 ========================================= */
@@ -1006,10 +1593,18 @@ WALLET HISTORY
 async function loadWalletHistory() {
 
 walletBox.innerHTML = `
-<div class="card" style="text-align:center;">
+
+<div
+class="card"
+style="text-align:center;"
+>
+
 Loading wallet history...
+
 </div>
+
 `;
+
 
 try {
 
@@ -1031,13 +1626,16 @@ ascending: false
 }
 );
 
+
 if (error) {
 
 throw error;
 
 }
 
+
 let walletHtml = "";
+
 
 (wallets || []).forEach(
 data => {
@@ -1046,6 +1644,7 @@ const statusClass =
 getStatusClass(
 data.status
 );
+
 
 walletHtml += `
 
@@ -1120,6 +1719,7 @@ View Receipt
 
 );
 
+
 if (!walletHtml) {
 
 walletHtml = `
@@ -1152,10 +1752,12 @@ will appear here.
 
 }
 
+
 walletBox.innerHTML =
 walletHtml;
 
 }
+
 
 catch(error) {
 
@@ -1163,6 +1765,7 @@ console.error(
 "Wallet History Error:",
 error
 );
+
 
 walletBox.innerHTML = `
 
@@ -1182,6 +1785,15 @@ Unable to Load Wallet History
 }
 
 }
+
+
+/* =========================================
+MAKE COPY FUNCTION AVAILABLE
+========================================= */
+
+window.copyOrderDetails =
+copyOrderDetails;
+
 
 /* =========================================
 TAB SWITCH
@@ -1205,6 +1817,7 @@ walletTab.classList.remove(
 
 };
 
+
 walletTab.onclick = () => {
 
 topupBox.style.display =
@@ -1223,6 +1836,7 @@ topupTab.classList.remove(
 
 };
 
+
 /* =========================================
 INITIAL LOAD
 ========================================= */
@@ -1230,6 +1844,7 @@ INITIAL LOAD
 await loadTopupHistory();
 
 await loadWalletHistory();
+
 
 /* =========================================
 OPEN WALLET HISTORY
@@ -1244,6 +1859,7 @@ localStorage.getItem(
 localStorage.removeItem(
 "openWalletHistory"
 );
+
 
 topupBox.style.display =
 "none";
@@ -1261,6 +1877,7 @@ topupTab.classList.remove(
 
 }
 
+
 /* =========================================
 OPEN TOP-UP HISTORY
 ========================================= */
@@ -1274,6 +1891,7 @@ localStorage.getItem(
 localStorage.removeItem(
 "openTopupHistory"
 );
+
 
 topupBox.style.display =
 "block";
@@ -1290,6 +1908,7 @@ walletTab.classList.remove(
 );
 
 }
+
 
 console.log(
 "🔥 Phoenix History Loaded"
